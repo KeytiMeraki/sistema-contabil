@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@
     <!-- Estilos Customizados -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#120c11] text-gray-100 min-h-screen font-sans selection:bg-secondary selection:text-gray-900">
+<body class="bg-[#120c11] text-gray-100 min-h-screen font-sans selection:bg-secondary selection:text-gray-900 overflow-x-hidden">
 
     <!-- DATALIST PARA CIDADES -->
     <datalist id="cidades-list"></datalist>
@@ -51,33 +51,32 @@
         </div>
     </div>
 
-    <!-- 1. TELA DE LOGIN / BLOQUEIO INICIAL -->
-    <div id="auth-screen" class="fixed inset-0 z-40 flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-cover bg-center filter blur-sm opacity-20 pointer-events-none" style="background-image: url('https://placehold.co/1920x1080/1a1018/C29B28?text=Sistema')"></div>
-        <div class="glass-card rounded-3xl max-w-md w-full p-8 relative overflow-hidden shadow-2xl border border-white/10 light-mode:border-black/10">
+    <!-- 1. TELA DE LOGIN / BLOQUEIO INICIAL (FUNDO SÓLIDO TOTALMENTE OPACO) -->
+    <div id="auth-screen" class="fixed inset-0 z-40 flex items-center justify-center p-4 bg-[#120c11]">
+        <div class="glass-card rounded-3xl max-w-md w-full p-8 relative overflow-hidden shadow-2xl border border-white/10">
             <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-secondary to-primary"></div>
             
             <div class="text-center mb-8">
                 <div class="inline-flex p-4 bg-primary/20 text-secondary rounded-2xl mb-4 shadow-inner border border-secondary/30">
                     <i class="fas fa-shield-alt text-4xl"></i>
                 </div>
-                <h1 class="text-2xl font-black tracking-tight">Sistema Contábil Integrado</h1>
-                <p class="text-xs opacity-75 mt-1 uppercase tracking-wider font-semibold">Prefeitura Municipal de Lavras - MG</p>
+                <h1 class="text-2xl font-black tracking-tight text-white">Sistema Contábil Integrado</h1>
+                <p class="text-xs opacity-75 mt-1 uppercase tracking-wider font-semibold text-gray-300">Prefeitura Municipal de Lavras - MG</p>
             </div>
 
             <form id="form-login" onsubmit="fazerLogin(event)" class="space-y-5">
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider opacity-85 mb-2">Usuário</label>
+                    <label class="block text-xs font-bold uppercase tracking-wider opacity-85 mb-2 text-gray-200">Usuário</label>
                     <div class="relative">
-                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center opacity-60"><i class="fas fa-user"></i></span>
-                        <input type="text" id="login-user" class="glass-input pl-11 block w-full rounded-xl p-3.5 text-sm font-medium transition" placeholder="Digite seu usuário" required>
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center opacity-60 text-gray-300"><i class="fas fa-user"></i></span>
+                        <input type="text" id="login-user" class="glass-input pl-11 block w-full rounded-xl p-3.5 text-sm font-medium transition text-white bg-white/5 border border-white/10 focus:border-secondary focus:outline-none" placeholder="Digite seu usuário" required>
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider opacity-85 mb-2">Senha</label>
+                    <label class="block text-xs font-bold uppercase tracking-wider opacity-85 mb-2 text-gray-200">Senha</label>
                     <div class="relative">
-                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center opacity-60"><i class="fas fa-lock"></i></span>
-                        <input type="password" id="login-pass" class="glass-input pl-11 block w-full rounded-xl p-3.5 text-sm font-medium transition" placeholder="••••••••" required>
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center opacity-60 text-gray-300"><i class="fas fa-lock"></i></span>
+                        <input type="password" id="login-pass" class="glass-input pl-11 block w-full rounded-xl p-3.5 text-sm font-medium transition text-white bg-white/5 border border-white/10 focus:border-secondary focus:outline-none" placeholder="••••••••" required>
                     </div>
                 </div>
                 <button type="submit" class="w-full bg-[#6B1C33] hover:bg-[#521326] text-white py-3.5 rounded-xl shadow-lg font-bold transition transform active:scale-95 flex items-center justify-center gap-2">
@@ -89,23 +88,23 @@
     </div>
 
     <!-- 2. TELA DE SELEÇÃO DE SISTEMAS -->
-    <div id="system-selector-screen" class="fixed inset-0 z-30 flex flex-col items-center justify-center p-6 hidden overflow-y-auto">
+    <div id="system-selector-screen" class="fixed inset-0 z-30 flex flex-col items-center justify-center p-6 hidden overflow-y-auto bg-[#120c11]">
         <div class="max-w-5xl w-full mx-auto text-center mb-8">
             <span class="text-secondary font-bold text-xs uppercase tracking-widest bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">Portal de Sistemas</span>
-            <h2 class="text-3xl md:text-4xl font-black mt-3 mb-2">Você deseja acessar qual sistema?</h2>
-            <p class="text-sm opacity-85">Selecione abaixo o módulo desejado para iniciar as operações contábeis e de auditoria.</p>
+            <h2 class="text-3xl md:text-4xl font-black mt-3 mb-2 text-white">Você deseja acessar qual sistema?</h2>
+            <p class="text-sm opacity-85 text-gray-300">Selecione abaixo o módulo desejado para iniciar as operações contábeis e de auditoria.</p>
         </div>
 
         <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Card 1: Diárias -->
-            <div onclick="abrirModulo('diarias')" class="glass-card rounded-2xl p-6 cursor-pointer hover:border-secondary transition-all transform hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between">
+            <div onclick="abrirModulo('diarias')" class="glass-card rounded-2xl p-6 cursor-pointer hover:border-secondary transition-all transform hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between border border-white/10">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/30 transition"></div>
                 <div>
                     <div class="w-12 h-12 rounded-xl bg-primary/20 text-secondary flex items-center justify-center text-xl mb-4 border border-secondary/30">
                         <i class="fas fa-file-invoice-dollar"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition">Sistema de Auditoria de Despesas de Diárias</h3>
-                    <p class="text-xs opacity-80 leading-relaxed">Cálculos de diárias prévias, complementações e viagens realizadas com base na Lei Municipal nº 4.937/2025.</p>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition text-white">Sistema de Auditoria de Despesas de Diárias</h3>
+                    <p class="text-xs opacity-80 leading-relaxed text-gray-300">Cálculos de diárias prévias, complementações e viagens realizadas com base na Lei Municipal nº 4.937/2025.</p>
                 </div>
                 <div class="mt-6 flex items-center text-xs font-bold text-secondary gap-2">
                     <span>Acessar Módulo</span> <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
@@ -113,14 +112,14 @@
             </div>
 
             <!-- Card 2: SMS Financeiro -->
-            <div onclick="abrirModulo('sms')" class="glass-card rounded-2xl p-6 cursor-pointer hover:border-secondary transition-all transform hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between">
+            <div onclick="abrirModulo('sms')" class="glass-card rounded-2xl p-6 cursor-pointer hover:border-secondary transition-all transform hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between border border-white/10">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/30 transition"></div>
                 <div>
                     <div class="w-12 h-12 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center text-xl mb-4 border border-secondary/30">
                         <i class="fas fa-chart-pie"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition">Sistema de Gestão Financeira e Orçamentária - SMS</h3>
-                    <p class="text-xs opacity-80 leading-relaxed">Pesquisa integrada em contas, fontes, emendas, portarias, VISA, resoluções e objetos de repasse (SUSÃO e convênios).</p>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition text-white">Sistema de Gestão Financeira e Orçamentária - SMS</h3>
+                    <p class="text-xs opacity-80 leading-relaxed text-gray-300">Pesquisa integrada em contas, fontes, emendas, portarias, VISA, resoluções e objetos de repasse (SUSÃO e convênios).</p>
                 </div>
                 <div class="mt-6 flex items-center text-xs font-bold text-secondary gap-2">
                     <span>Acessar Módulo</span> <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
@@ -128,14 +127,14 @@
             </div>
 
             <!-- Card 3: Nota Fiscal -->
-            <div onclick="abrirModulo('notafiscal')" class="glass-card rounded-2xl p-6 cursor-pointer hover:border-secondary transition-all transform hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between">
+            <div onclick="abrirModulo('notafiscal')" class="glass-card rounded-2xl p-6 cursor-pointer hover:border-secondary transition-all transform hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between border border-white/10">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/30 transition"></div>
                 <div>
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-500 dark:text-blue-400 flex items-center justify-center text-xl mb-4 border border-blue-500/30">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-4 border border-blue-500/30">
                         <i class="fas fa-receipt"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition">Sistema de Auditoria de Nota Fiscal</h3>
-                    <p class="text-xs opacity-80 leading-relaxed">Auditoria fiscal de notas, validação de itens, alíquotas, retenções tributárias e conformidade de fornecedores.</p>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition text-white">Sistema de Auditoria de Nota Fiscal</h3>
+                    <p class="text-xs opacity-80 leading-relaxed text-gray-300">Auditoria fiscal de notas, validação de itens, alíquotas, retenções tributárias e conformidade de fornecedores.</p>
                 </div>
                 <div class="mt-6 flex items-center text-xs font-bold text-secondary gap-2">
                     <span>Acessar Módulo</span> <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
@@ -143,14 +142,14 @@
             </div>
 
             <!-- Card 4: Gerenciar Sistema (Admin) -->
-            <div id="card-gerenciar" onclick="abrirModulo('gerenciar')" class="glass-card rounded-2xl p-6 cursor-pointer hover:border-secondary transition-all transform hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between border-dashed border-secondary/40">
+            <div id="card-gerenciar" onclick="abrirModulo('gerenciar')" class="glass-card rounded-2xl p-6 cursor-pointer hover:border-secondary transition-all transform hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between border border-dashed border-secondary/40">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/30 transition"></div>
                 <div>
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-4 border border-purple-500/30">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4 border border-purple-500/30">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition">Gerenciar Sistema</h3>
-                    <p class="text-xs opacity-80 leading-relaxed">Painel administrativo exclusivo para controle de perfis, senhas e atualização de fontes/repasses SMS.</p>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition text-white">Gerenciar Sistema</h3>
+                    <p class="text-xs opacity-80 leading-relaxed text-gray-300">Painel administrativo exclusivo para controle de perfis, senhas e atualização de fontes/repasses SMS.</p>
                 </div>
                 <div class="mt-6 flex items-center text-xs font-bold text-secondary gap-2">
                     <span>Acessar Painel Admin</span> <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
@@ -159,7 +158,7 @@
         </div>
 
         <div class="mt-8">
-            <button onclick="fazerLogout()" class="text-xs opacity-85 hover:opacity-100 flex items-center gap-2 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 px-4 py-2 rounded-xl transition border border-black/10 dark:border-white/10">
+            <button onclick="fazerLogout()" class="text-xs opacity-85 hover:opacity-100 flex items-center gap-2 bg-white/5 hover:bg-white/10 px-4 py-2 rounded-xl transition border border-white/10 text-white">
                 <i class="fas fa-sign-out-alt"></i> Encerrar Sessão (<span id="user-session-lbl"></span>)
             </button>
         </div>
@@ -169,7 +168,7 @@
     <div id="main-app-container" class="min-h-screen flex flex-col hidden">
         
         <!-- Top Navbar -->
-        <header class="glass-card border-b border-gray-200 dark:border-white/10 sticky top-0 z-20 px-4 py-3">
+        <header class="glass-card border-b border-gray-200 dark:border-white/10 sticky top-0 z-20 px-4 py-3 bg-[#181117]">
             <div class="max-w-[98%] xl:max-w-[1700px] 2xl:max-w-[1900px] w-full mx-auto flex justify-between items-center">
                 <div class="flex items-center gap-3">
                     <div class="relative">
@@ -179,20 +178,20 @@
                             <i class="fas fa-chevron-down text-xs opacity-80"></i>
                         </button>
                         
-                        <div id="dropdown-sistemas" class="absolute left-0 mt-2 w-72 glass-modal rounded-2xl p-2 shadow-2xl hidden z-50 border border-gray-200 dark:border-white/10">
-                            <div class="text-[10px] uppercase font-bold tracking-wider opacity-75 px-3 py-2">Sistemas Disponíveis</div>
+                        <div id="dropdown-sistemas" class="absolute left-0 mt-2 w-72 glass-modal rounded-2xl p-2 shadow-2xl hidden z-50 border border-gray-200 dark:border-white/10 bg-[#1e151d]">
+                            <div class="text-[10px] uppercase font-bold tracking-wider opacity-75 px-3 py-2 text-gray-300">Sistemas Disponíveis</div>
                             <div class="space-y-1">
-                                <button onclick="mudarModulo('diarias')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition">
+                                <button onclick="mudarModulo('diarias')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition text-white">
                                     <i class="fas fa-file-invoice-dollar text-secondary"></i> Diárias (Lei 4.937/2025)
                                 </button>
-                                <button onclick="mudarModulo('sms')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition">
+                                <button onclick="mudarModulo('sms')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition text-white">
                                     <i class="fas fa-chart-pie text-secondary"></i> Gestão Financeira - SMS
                                 </button>
-                                <button onclick="mudarModulo('notafiscal')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition">
-                                    <i class="fas fa-receipt text-blue-500 dark:text-blue-400"></i> Auditoria de Nota Fiscal
+                                <button onclick="mudarModulo('notafiscal')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition text-white">
+                                    <i class="fas fa-receipt text-blue-400"></i> Auditoria de Nota Fiscal
                                 </button>
                                 <div id="dropdown-admin-item">
-                                    <button onclick="mudarModulo('gerenciar')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition text-purple-700 dark:text-purple-300">
+                                    <button onclick="mudarModulo('gerenciar')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition text-purple-300">
                                         <i class="fas fa-cogs"></i> Gerenciar Sistema (Admin)
                                     </button>
                                 </div>
@@ -201,16 +200,16 @@
                     </div>
 
                     <div>
-                        <h1 id="current-system-title" class="text-sm md:text-base font-extrabold tracking-tight">Sistema de Auditoria de Despesas de Diárias</h1>
-                        <p class="text-[10px] opacity-75 font-semibold">Prefeitura Municipal de Lavras - MG</p>
+                        <h1 id="current-system-title" class="text-sm md:text-base font-extrabold tracking-tight text-white">Sistema de Auditoria de Despesas de Diárias</h1>
+                        <p class="text-[10px] opacity-75 font-semibold text-gray-300">Prefeitura Municipal de Lavras - MG</p>
                     </div>
                 </div>
 
                 <div class="flex items-center gap-3">
-                    <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition border border-black/10 dark:border-white/10 text-secondary" title="Alternar Tema Claro/Escuro">
+                    <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 transition border border-white/10 text-secondary" title="Alternar Tema Claro/Escuro">
                         <i id="theme-icon" class="fas fa-sun"></i>
                     </button>
-                    <div class="text-xs font-semibold hidden md:block">
+                    <div class="text-xs font-semibold hidden md:block text-gray-200">
                         Usuário: <span id="nav-username" class="text-secondary font-bold"></span>
                     </div>
                     <button onclick="fazerLogout()" class="bg-red-700 hover:bg-red-800 text-white text-xs px-3 py-2 rounded-xl font-bold transition flex items-center gap-1.5 border border-red-500/30">
@@ -228,17 +227,17 @@
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
                     
                     <div class="glass-card p-3 rounded-2xl border border-gray-200 dark:border-white/10 space-y-1.5 lg:sticky lg:top-20">
-                        <div class="text-[10px] uppercase font-bold tracking-wider opacity-75 px-3 py-2">Módulo Diárias</div>
+                        <div class="text-[10px] uppercase font-bold tracking-wider opacity-75 px-3 py-2 text-gray-300">Módulo Diárias</div>
                         <button onclick="openDiariasTab('contabilidade')" id="btn-tab-contabilidade" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-primary text-white shadow-md flex items-center gap-3">
                             <i class="fas fa-chart-line text-secondary text-sm"></i> <span>Contabilidade & Histórico</span>
                         </button>
-                        <button onclick="openDiariasTab('previa')" id="btn-tab-previa" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 flex items-center gap-3">
+                        <button onclick="openDiariasTab('previa')" id="btn-tab-previa" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-white flex items-center gap-3">
                             <i class="fas fa-calendar-alt text-secondary text-sm"></i> <span>Diária Prévia (Anexo II)</span>
                         </button>
-                        <button onclick="openDiariasTab('complementacao')" id="btn-tab-complementacao" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 flex items-center gap-3">
+                        <button onclick="openDiariasTab('complementacao')" id="btn-tab-complementacao" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-white flex items-center gap-3">
                             <i class="fas fa-plus-circle text-secondary text-sm"></i> <span>Complementações (Anexo III)</span>
                         </button>
-                        <button onclick="openDiariasTab('realizadas')" id="btn-tab-realizadas" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 flex items-center gap-3">
+                        <button onclick="openDiariasTab('realizadas')" id="btn-tab-realizadas" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-white flex items-center gap-3">
                             <i class="fas fa-check-circle text-secondary text-sm"></i> <span>Viagens Realizadas</span>
                         </button>
                     </div>
@@ -247,26 +246,26 @@
                         <div id="diarias-contabilidade" class="diaria-tab-content space-y-6">
                             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                                 <div class="glass-card p-5 rounded-2xl border border-gray-200 dark:border-white/10">
-                                    <p class="text-xs opacity-75 font-bold uppercase">Total de Auditorias</p>
+                                    <p class="text-xs opacity-75 font-bold uppercase text-gray-300">Total de Auditorias</p>
                                     <p class="text-3xl font-black mt-1 text-secondary" id="dash-total">0</p>
                                 </div>
                                 <div class="glass-card p-5 rounded-2xl border border-gray-200 dark:border-white/10">
-                                    <p class="text-xs opacity-75 font-bold uppercase">Viagens Prévias</p>
-                                    <p class="text-3xl font-black mt-1 text-green-600 dark:text-green-400" id="dash-previas">0</p>
+                                    <p class="text-xs opacity-75 font-bold uppercase text-gray-300">Viagens Prévias</p>
+                                    <p class="text-3xl font-black mt-1 text-green-400" id="dash-previas">0</p>
                                 </div>
                                 <div class="glass-card p-5 rounded-2xl border border-gray-200 dark:border-white/10">
-                                    <p class="text-xs opacity-75 font-bold uppercase">Complementações</p>
-                                    <p class="text-3xl font-black mt-1 text-yellow-600 dark:text-yellow-400" id="dash-complementacoes">0</p>
+                                    <p class="text-xs opacity-75 font-bold uppercase text-gray-300">Complementações</p>
+                                    <p class="text-3xl font-black mt-1 text-yellow-400" id="dash-complementacoes">0</p>
                                 </div>
                                 <div class="glass-card p-5 rounded-2xl border border-gray-200 dark:border-white/10">
-                                    <p class="text-xs opacity-75 font-bold uppercase">Já Realizadas</p>
-                                    <p class="text-3xl font-black mt-1 text-blue-600 dark:text-blue-400" id="dash-realizadas">0</p>
+                                    <p class="text-xs opacity-75 font-bold uppercase text-gray-300">Já Realizadas</p>
+                                    <p class="text-3xl font-black mt-1 text-blue-400" id="dash-realizadas">0</p>
                                 </div>
                             </div>
 
                             <div class="glass-card p-6 rounded-2xl border border-gray-200 dark:border-white/10">
                                 <div class="flex justify-between items-center mb-4">
-                                    <h3 class="text-base font-bold">Histórico Geral de Diárias</h3>
+                                    <h3 class="text-base font-bold text-white">Histórico Geral de Diárias</h3>
                                     <div id="admin-limpar-container" class="hidden">
                                         <button onclick="limparHistoricoGeral()" class="bg-red-700 hover:bg-red-800 text-white text-xs px-3 py-2 rounded-xl font-bold transition flex items-center gap-1.5 border border-red-500/30">
                                             <i class="fas fa-trash-alt"></i> Limpar Todo o Histórico
@@ -296,53 +295,53 @@
                         <div id="diarias-previa" class="diaria-tab-content hidden">
                             <div class="glass-card p-6 rounded-2xl border border-gray-200 dark:border-white/10">
                                 <h2 class="text-xl font-extrabold text-secondary mb-1">Auditoria de Diária Prévia (Anexo II)</h2>
-                                <p class="text-xs opacity-80 mb-6 font-medium">Cálculo de viagem antecipada conforme legislação municipal.</p>
+                                <p class="text-xs opacity-80 mb-6 font-medium text-gray-300">Cálculo de viagem antecipada conforme legislação municipal.</p>
 
                                 <form id="form-previa" onsubmit="salvarAuditoria(event, 'Prévia')" class="space-y-4">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Cargo / Função</label>
-                                            <select id="prev-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required>
-                                                <option value="servidor">Servidor / Motorista / Assessor / Conselheiro</option>
-                                                <option value="prefeito">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cargo / Função</label>
+                                            <select id="prev-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required>
+                                                <option value="servidor" class="bg-[#1e151d] text-white">Servidor / Motorista / Assessor / Conselheiro</option>
+                                                <option value="prefeito" class="bg-[#1e151d] text-white">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Cidade Destino</label>
-                                            <input type="text" id="prev-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="checkDistance('prev')" placeholder="Digite ou selecione a cidade">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cidade Destino</label>
+                                            <input type="text" id="prev-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="checkDistance('prev')" placeholder="Digite ou selecione a cidade">
                                         </div>
                                         <div id="prev-dist-container" class="hidden md:col-span-2">
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Distância (km) - Digite manualmente</label>
-                                            <input type="number" id="prev-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium" oninput="calcularTempoEValor('prev')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Distância (km) - Digite manualmente</label>
+                                            <input type="number" id="prev-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" oninput="calcularTempoEValor('prev')">
                                         </div>
                                         <div class="md:col-span-2">
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Quantidade de Diárias</label>
-                                            <select id="prev-fracao" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('prev')">
-                                                <option value="0.5">1/2 Diária</option>
-                                                <option value="0.75">75% da Diária</option>
-                                                <option value="1" selected>1 Diária</option>
-                                                <option value="2">2 Diárias</option>
-                                                <option value="3">3 Diárias</option>
-                                                <option value="4">4 Diárias</option>
-                                                <option value="5">5 Diárias</option>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Quantidade de Diárias</label>
+                                            <select id="prev-fracao" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('prev')">
+                                                <option value="0.5" class="bg-[#1e151d] text-white">1/2 Diária</option>
+                                                <option value="0.75" class="bg-[#1e151d] text-white">75% da Diária</option>
+                                                <option value="1" selected class="bg-[#1e151d] text-white">1 Diária</option>
+                                                <option value="2" class="bg-[#1e151d] text-white">2 Diárias</option>
+                                                <option value="3" class="bg-[#1e151d] text-white">3 Diárias</option>
+                                                <option value="4" class="bg-[#1e151d] text-white">4 Diárias</option>
+                                                <option value="5" class="bg-[#1e151d] text-white">5 Diárias</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Data de Início</label>
-                                            <input type="date" id="prev-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Data de Início</label>
+                                            <input type="date" id="prev-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Data de Término</label>
-                                            <input type="date" id="prev-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Data de Término</label>
+                                            <input type="date" id="prev-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required>
                                         </div>
                                     </div>
                                     
-                                    <div class="bg-black/10 dark:bg-black/20 p-4 rounded-xl border border-gray-200 dark:border-white/10 flex justify-between items-center">
+                                    <div class="bg-black/20 p-4 rounded-xl border border-white/10 flex justify-between items-center">
                                         <div>
-                                            <p class="text-xs opacity-75">Distância estimada: <span id="prev-calc-dist" class="font-bold">-- km</span></p>
+                                            <p class="text-xs opacity-75 text-gray-300">Distância estimada: <span id="prev-calc-dist" class="font-bold text-white">-- km</span></p>
                                         </div>
                                         <div class="text-right">
-                                            <p class="text-xs opacity-75">Valor Estipulado:</p>
+                                            <p class="text-xs opacity-75 text-gray-300">Valor Estipulado:</p>
                                             <p class="text-2xl font-black text-secondary">R$ <span id="prev-valor">0,00</span></p>
                                         </div>
                                     </div>
@@ -355,48 +354,48 @@
                         <div id="diarias-complementacao" class="diaria-tab-content hidden">
                             <div class="glass-card p-6 rounded-2xl border border-gray-200 dark:border-white/10">
                                 <h2 class="text-xl font-extrabold text-secondary mb-1">Auditoria de Complementação (Anexo III)</h2>
-                                <p class="text-xs opacity-80 mb-6 font-medium">Cálculo de viagem em que o tempo excedeu o previsto inicialmente.</p>
+                                <p class="text-xs opacity-80 mb-6 font-medium text-gray-300">Cálculo de viagem em que o tempo excedeu o previsto inicialmente.</p>
 
                                 <form id="form-comp" onsubmit="salvarAuditoria(event, 'Complementação')" class="space-y-4">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Cargo / Função</label>
-                                            <select id="comp-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('comp')">
-                                                <option value="servidor">Servidor / Motorista / Assessor / Conselheiro</option>
-                                                <option value="prefeito">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cargo / Função</label>
+                                            <select id="comp-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('comp')">
+                                                <option value="servidor" class="bg-[#1e151d] text-white">Servidor / Motorista / Assessor / Conselheiro</option>
+                                                <option value="prefeito" class="bg-[#1e151d] text-white">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Cidade Destino</label>
-                                            <input type="text" id="comp-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="checkDistance('comp')" placeholder="Digite ou selecione a cidade">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cidade Destino</label>
+                                            <input type="text" id="comp-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="checkDistance('comp')" placeholder="Digite ou selecione a cidade">
                                         </div>
                                         <div id="comp-dist-container" class="hidden md:col-span-2">
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Distância (km) - Digite manualmente</label>
-                                            <input type="number" id="comp-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium" oninput="calcularTempoEValor('comp')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Distância (km) - Digite manualmente</label>
+                                            <input type="number" id="comp-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" oninput="calcularTempoEValor('comp')">
                                         </div>
                                         <div class="md:col-span-2">
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Valor Já Recebido na Prévia (R$)</label>
-                                            <input type="number" step="0.01" id="comp-recebido" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required oninput="calcularTempoEValor('comp')" placeholder="0,00">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Valor Já Recebido na Prévia (R$)</label>
+                                            <input type="number" step="0.01" id="comp-recebido" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required oninput="calcularTempoEValor('comp')" placeholder="0,00">
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Início (Data e Hora)</label>
-                                            <input type="datetime-local" id="comp-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('comp')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Início (Data e Hora)</label>
+                                            <input type="datetime-local" id="comp-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('comp')">
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Término (Data e Hora)</label>
-                                            <input type="datetime-local" id="comp-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('comp')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Término (Data e Hora)</label>
+                                            <input type="datetime-local" id="comp-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('comp')">
                                         </div>
                                     </div>
 
-                                    <div class="bg-black/10 dark:bg-black/25 p-4 rounded-xl border border-gray-200 dark:border-white/10 grid grid-cols-2 gap-4 text-xs">
+                                    <div class="bg-black/25 p-4 rounded-xl border border-white/10 grid grid-cols-2 gap-4 text-xs">
                                         <div>
-                                            <p class="opacity-75">Tempo Total Gasto:</p>
-                                            <p class="font-bold text-sm mt-0.5" id="comp-tempo">-- h -- min</p>
-                                            <p class="opacity-75 mt-2">Valor Total de Direito:</p>
-                                            <p class="font-bold text-sm mt-0.5">R$ <span id="comp-valor-direito">0,00</span></p>
+                                            <p class="opacity-75 text-gray-300">Tempo Total Gasto:</p>
+                                            <p class="font-bold text-sm mt-0.5 text-white" id="comp-tempo">-- h -- min</p>
+                                            <p class="opacity-75 mt-2 text-gray-300">Valor Total de Direito:</p>
+                                            <p class="font-bold text-sm mt-0.5 text-white">R$ <span id="comp-valor-direito">0,00</span></p>
                                         </div>
                                         <div class="text-right">
-                                            <p class="opacity-75">Valor a Receber (Complemento):</p>
+                                            <p class="opacity-75 text-gray-300">Valor a Receber (Complemento):</p>
                                             <p class="text-xl font-black text-secondary mt-1">R$ <span id="comp-valor">0,00</span></p>
                                         </div>
                                     </div>
@@ -409,42 +408,42 @@
                         <div id="diarias-realizadas" class="diaria-tab-content hidden">
                             <div class="glass-card p-6 rounded-2xl border border-gray-200 dark:border-white/10">
                                 <h2 class="text-xl font-extrabold text-secondary mb-1">Despesas de Viagens Já Realizadas</h2>
-                                <p class="text-xs opacity-80 mb-6 font-medium">Viagens ocorridas sem diária prévia (pagamento integral posterior).</p>
+                                <p class="text-xs opacity-80 mb-6 font-medium text-gray-300">Viagens ocorridas sem diária prévia (pagamento integral posterior).</p>
 
                                 <form id="form-real" onsubmit="salvarAuditoria(event, 'Realizada')" class="space-y-4">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Cargo / Função</label>
-                                            <select id="real-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('real')">
-                                                <option value="servidor">Servidor / Motorista / Assessor / Conselheiro</option>
-                                                <option value="prefeito">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cargo / Função</label>
+                                            <select id="real-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('real')">
+                                                <option value="servidor" class="bg-[#1e151d] text-white">Servidor / Motorista / Assessor / Conselheiro</option>
+                                                <option value="prefeito" class="bg-[#1e151d] text-white">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Cidade Destino</label>
-                                            <input type="text" id="real-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="checkDistance('real')" placeholder="Digite ou selecione a cidade">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cidade Destino</label>
+                                            <input type="text" id="real-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="checkDistance('real')" placeholder="Digite ou selecione a cidade">
                                         </div>
                                         <div id="real-dist-container" class="hidden md:col-span-2">
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Distância (km) - Digite manualmente</label>
-                                            <input type="number" id="real-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium" oninput="calcularTempoEValor('real')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Distância (km) - Digite manualmente</label>
+                                            <input type="number" id="real-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" oninput="calcularTempoEValor('real')">
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Início (Data e Hora)</label>
-                                            <input type="datetime-local" id="real-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('real')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Início (Data e Hora)</label>
+                                            <input type="datetime-local" id="real-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('real')">
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1">Término (Data e Hora)</label>
-                                            <input type="datetime-local" id="real-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('real')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Término (Data e Hora)</label>
+                                            <input type="datetime-local" id="real-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('real')">
                                         </div>
                                     </div>
 
-                                    <div class="bg-black/10 dark:bg-black/25 p-4 rounded-xl border border-gray-200 dark:border-white/10 flex justify-between items-center text-xs">
+                                    <div class="bg-black/25 p-4 rounded-xl border border-white/10 flex justify-between items-center text-xs">
                                         <div>
-                                            <p class="opacity-75">Tempo Total Gasto: <span id="real-tempo" class="font-bold">-- h -- min</span></p>
-                                            <p class="opacity-75 mt-1">Distância: <span id="real-calc-dist" class="font-bold">-- km</span></p>
+                                            <p class="opacity-75 text-gray-300">Tempo Total Gasto: <span id="real-tempo" class="font-bold text-white">-- h -- min</span></p>
+                                            <p class="opacity-75 mt-1 text-gray-300">Distância: <span id="real-calc-dist" class="font-bold text-white">-- km</span></p>
                                         </div>
                                         <div class="text-right">
-                                            <p class="opacity-75">Valor Integral a Receber:</p>
+                                            <p class="opacity-75 text-gray-300">Valor Integral a Receber:</p>
                                             <p class="text-2xl font-black text-secondary">R$ <span id="real-valor">0,00</span></p>
                                         </div>
                                     </div>
@@ -464,7 +463,7 @@
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
                         <div>
                             <h2 class="text-xl font-black text-secondary">Sistema de Gestão Financeira e Orçamentária - SMS</h2>
-                            <p class="text-xs opacity-80 mt-1">Consulta unificada em contas, fontes, emendas, portarias, VISA, resoluções e objetos de repasse (SUSÃO e convênios).</p>
+                            <p class="text-xs opacity-80 mt-1 text-gray-300">Consulta unificada em contas, fontes, emendas, portarias, VISA, resoluções e objetos de repasse (SUSÃO e convênios).</p>
                         </div>
                         <div id="sms-admin-action-btn" class="hidden">
                             <button onclick="abrirModalAddContaSMS()" class="bg-secondary text-gray-900 font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:opacity-90 transition shadow-lg">
@@ -475,7 +474,7 @@
 
                     <div class="mb-6 relative">
                         <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-secondary"><i class="fas fa-search"></i></span>
-                        <input type="text" id="sms-search-input" oninput="filtrarContasSMS()" class="glass-input pl-11 pr-4 py-3.5 rounded-xl w-full text-xs font-semibold" placeholder="Pesquisar em todas as colunas (CONTA, FONTE, EMENDA, CÓDIGO DE APLICAÇÃO, PORTARIA, VISA, OBJETO, UTILIZAÇÃO...)">
+                        <input type="text" id="sms-search-input" oninput="filtrarContasSMS()" class="glass-input pl-11 pr-4 py-3.5 rounded-xl w-full text-xs font-semibold text-white bg-white/5 border border-white/10" placeholder="Pesquisar em todas as colunas (CONTA, FONTE, EMENDA, CÓDIGO DE APLICAÇÃO, PORTARIA, VISA, OBJETO, UTILIZAÇÃO...)">
                     </div>
 
                     <div class="w-full overflow-hidden rounded-xl border border-gray-200 dark:border-white/10">
@@ -505,7 +504,7 @@
                     <div class="flex justify-between items-center mb-6">
                         <div>
                             <h2 class="text-xl font-black text-secondary">Sistema de Auditoria de Nota Fiscal</h2>
-                            <p class="text-xs opacity-80 mt-1">Conferência de Notas Fiscais Eletrônicas (NF-e/NFS-e), retenções e itens auditados.</p>
+                            <p class="text-xs opacity-80 mt-1 text-gray-300">Conferência de Notas Fiscais Eletrônicas (NF-e/NFS-e), retenções e itens auditados.</p>
                         </div>
                         <button onclick="abrirModalNovaNota()" class="bg-primary text-white font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:opacity-90 transition shadow-lg">
                             <i class="fas fa-plus"></i> Registrar Nota Fiscal
@@ -535,24 +534,24 @@
             <div id="module-gerenciar" class="system-module space-y-6 hidden">
                 <div class="glass-card p-6 rounded-2xl border border-gray-200 dark:border-white/10">
                     <h2 class="text-xl font-black text-secondary mb-1">Gerenciar Sistema (Painel Administrativo)</h2>
-                    <p class="text-xs opacity-80 mb-6 font-medium">Controle de perfis, permissões e customização dos módulos globais.</p>
+                    <p class="text-xs opacity-80 mb-6 font-medium text-gray-300">Controle de perfis, permissões e customização dos módulos globais.</p>
 
                     <div class="flex gap-2 border-b border-gray-200 dark:border-white/10 pb-4 mb-6">
                         <button onclick="openAdminTab('perfis')" id="btn-admin-perfis" class="admin-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-primary text-white">Gerenciar Perfis & Senhas</button>
-                        <button onclick="openAdminTab('sms-config')" id="btn-admin-sms" class="admin-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10">Contas SMS (Gerenciar Fontes)</button>
+                        <button onclick="openAdminTab('sms-config')" id="btn-admin-sms" class="admin-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-white">Contas SMS (Gerenciar Fontes)</button>
                     </div>
 
                     <div id="admin-tab-perfis" class="admin-tab-content space-y-6">
-                        <div class="bg-black/10 dark:bg-black/20 p-5 rounded-xl border border-gray-200 dark:border-white/10">
-                            <h3 class="text-sm font-bold mb-4">Cadastrar Novo Usuário / Perfil</h3>
+                        <div class="bg-black/20 p-5 rounded-xl border border-white/10">
+                            <h3 class="text-sm font-bold mb-4 text-white">Cadastrar Novo Usuário / Perfil</h3>
                             <form onsubmit="cadastrarUsuarioAdmin(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
-                                    <label class="block text-xs font-semibold opacity-85 mb-1">Nome de Usuário</label>
-                                    <input type="text" id="adm-novo-user" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required placeholder="login_usuario">
+                                    <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Nome de Usuário</label>
+                                    <input type="text" id="adm-novo-user" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required placeholder="login_usuario">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold opacity-85 mb-1">Senha de Acesso</label>
-                                    <input type="password" id="adm-novo-pass" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required placeholder="••••••••">
+                                    <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Senha de Acesso</label>
+                                    <input type="password" id="adm-novo-pass" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required placeholder="••••••••">
                                 </div>
                                 <div class="flex items-end">
                                     <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white py-3 rounded-xl font-bold text-xs shadow-lg transition">Cadastrar Perfil</button>
@@ -561,7 +560,7 @@
                         </div>
 
                         <div>
-                            <h3 class="text-sm font-bold mb-3">Lista de Usuários com Acesso</h3>
+                            <h3 class="text-sm font-bold mb-3 text-white">Lista de Usuários com Acesso</h3>
                             <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                                 <table class="min-w-full divide-y divide-gray-200 dark:divide-white/10 text-xs">
                                     <thead>
@@ -578,10 +577,10 @@
 
                     <div id="admin-tab-sms-config" class="admin-tab-content space-y-6 hidden">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-sm font-bold">Atalhos de Gerenciamento SMS</h3>
+                            <h3 class="text-sm font-bold text-white">Atalhos de Gerenciamento SMS</h3>
                             <button onclick="abrirModalAddContaSMS()" class="bg-secondary text-gray-900 font-bold px-3 py-2 rounded-xl text-xs">Adicionar Nova Conta</button>
                         </div>
-                        <p class="text-xs opacity-80">Todas as adições e edições feitas aqui atualizam instantaneamente a base de dados em tempo real no Firebase Firestore.</p>
+                        <p class="text-xs opacity-80 text-gray-300">Todas as adições e edições feitas aqui atualizam instantaneamente a base de dados em tempo real no Firebase Firestore.</p>
                     </div>
                 </div>
             </div>
@@ -591,46 +590,46 @@
 
     <!-- MODAL ADICIONAR CONTA SMS -->
     <div id="modal-sms" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
-        <div class="glass-modal rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-secondary/30">
+        <div class="glass-modal rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-secondary/30 bg-[#1e151d]">
             <div class="flex justify-between items-center mb-4">
                 <h3 class="text-lg font-bold text-secondary">Adicionar / Editar Conta SMS</h3>
-                <button onclick="fecharModalSMS()" class="text-xs opacity-80 hover:opacity-100"><i class="fas fa-times text-base"></i></button>
+                <button onclick="fecharModalSMS()" class="text-xs opacity-80 hover:opacity-100 text-white"><i class="fas fa-times text-base"></i></button>
             </div>
             <form onsubmit="salvarNovaContaSMS(event)" class="space-y-3 text-xs">
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1">CONTA</label>
-                    <input type="text" id="sms-conta" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: 1048015">
+                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">CONTA</label>
+                    <input type="text" id="sms-conta" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: 1048015">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1">FONTE</label>
-                    <input type="text" id="sms-fonte" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: 600/604">
+                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">FONTE</label>
+                    <input type="text" id="sms-fonte" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: 600/604">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1">EMENDA /REPASSE/CUSTEIO</label>
-                    <input type="text" id="sms-repasse" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: CUSTEIO">
+                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">EMENDA /REPASSE/CUSTEIO</label>
+                    <input type="text" id="sms-repasse" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: CUSTEIO">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1">CÓDIGO DE APLICAÇÃO</label>
-                    <input type="text" id="sms-aplicacao" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: 3210">
+                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">CÓDIGO DE APLICAÇÃO</label>
+                    <input type="text" id="sms-aplicacao" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: 3210">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1">Nº da Portaria, Resolução e/ou Deliberação</label>
-                    <input type="text" id="sms-portaria" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: Resolução SES/MG nº 10002/2025">
+                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">Nº da Portaria, Resolução e/ou Deliberação</label>
+                    <input type="text" id="sms-portaria" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: Resolução SES/MG nº 10002/2025">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1">VISA</label>
-                    <input type="text" id="sms-visa" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: VISA, LEI 171, POEPS">
+                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">VISA</label>
+                    <input type="text" id="sms-visa" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: VISA, LEI 171, POEPS">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1">Objeto</label>
-                    <input type="text" id="sms-objeto" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: Conta do 'SUSÃO'">
+                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">Objeto</label>
+                    <input type="text" id="sms-objeto" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: Conta do 'SUSÃO'">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1">Possibilidades de utilização do recurso</label>
-                    <textarea id="sms-utilizacao" class="glass-input w-full rounded-xl p-2.5 font-medium" rows="2" placeholder="Ex: Observar a portaria específica do repasse"></textarea>
+                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">Possibilidades de utilização do recurso</label>
+                    <textarea id="sms-utilizacao" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" rows="2" placeholder="Ex: Observar a portaria específica do repasse"></textarea>
                 </div>
                 <div class="pt-3 flex justify-end gap-2">
-                    <button type="button" onclick="fecharModalSMS()" class="bg-black/10 dark:bg-white/10 px-4 py-2 rounded-xl font-bold">Cancelar</button>
+                    <button type="button" onclick="fecharModalSMS()" class="bg-white/10 px-4 py-2 rounded-xl font-bold text-white">Cancelar</button>
                     <button type="submit" class="bg-secondary text-gray-900 px-5 py-2 rounded-xl font-bold">Salvar Conta</button>
                 </div>
             </form>
@@ -645,789 +644,71 @@
     <script src="script.js"></script>
 </body>
 </html>
-📜 2. script.js Integrado ao Firebase Firestore
-Substitua todo o conteúdo do seu script.js:
-// script.js - Lógica, Regras e Sincronização em Nuvem (Firebase Firestore)
+🎨 2. Atualização do style.css
+Substitua também o seu style.css por este estilo para garantir camadas de prioridade (z-index) e opacidade perfeitas:
+/* Custom Glassmorphism & System Theme Styles */
 
-// 1. CONFIGURAÇÃO DO FIREBASE
-const firebaseConfig = {
-  apiKey: "AIzaSyARW1pihdfaP3qz9HJb67j8qnjlhZx7JZI",
-  authDomain: "sistema-contabil-lavras.firebaseapp.com",
-  databaseURL: "https://sistema-contabil-lavras-default-rtdb.firebaseio.com",
-  projectId: "sistema-contabil-lavras",
-  storageBucket: "sistema-contabil-lavras.firebasestorage.app",
-  messagingSenderId: "349368869878",
-  appId: "1:349368869878:web:1cedafacf469f61df3ddd7",
-  measurementId: "G-5V8J1Z9NBG"
-};
-
-// Inicialização segura do Firebase
-if (typeof firebase !== 'undefined' && !firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
-const db = typeof firebase !== 'undefined' ? firebase.firestore() : null;
-
-// LISTA DE CIDADES E MOCK DE DISTÂNCIAS
-const listaCidades = [
-    "Alfenas (141 km)", "Barbacena (156 km)", "Barretos (455 km)", "Bauru (530 km)", "Belo Horizonte (238 km)",
-    "Boa Esperança (78 km)", "Bom Sucesso (32 km)", "Botucatu (526 km)", "Carmo da Cachoeira (53 km)",
-    "Carrancas (66 km)", "Conceição do Rio Verde (150 km)", "Conselheiro Lafaiete (230 km)", "Contagem (232 km)",
-    "Divinópolis (162 km)", "Elói Mendes (126 km)", "Igarapé (195 km)", "Ijaci (14 km)", "Ingaí (30 km)",
-    "Itajubá (206 km)", "Itanhandu (147 km)", "Machado (179 km)", "Mateus Leme (220 km)", "Montes Claros (639 km)",
-    "Nepomuceno (34 km)", "Nova Lima (245 km)", "Oliveira (110 km)", "Passos (240 km)", "Perdões (25 km)",
-    "Poços de Caldas (215 km)", "Pouso Alegre (160 km)", "Pouso Alto (135 km)", "Ribeirão Preto (340 km)",
-    "Ribeirão Vermelho (12 km)", "Rio de Janeiro (442 km)", "Salinas (790 km)", "Santa Rita do Sapucaí (185 km)",
-    "Santo Antônio do Amparo (45 km)", "Santo Antônio do Monte (175 km)", "São João del-Rei (110 km)",
-    "São Lourenço (125 km)", "São Paulo (393 km)", "São Sebastião (480 km)", "São Sebastião do Paraíso (290 km)",
-    "Seritinga (115 km)", "Sorocaba (450 km)", "Taiobeiras (820 km)", "Três Corações (85 km)",
-    "Três Pontas (100 km)", "Uberaba (420 km)", "Varginha (106 km)"
-];
-
-const cidadesMock = {};
-listaCidades.forEach(item => {
-    let parts = item.split('(');
-    let nome = parts[0].trim().toLowerCase();
-    let dist = parseInt(parts[1].replace('km)', '').trim());
-    cidadesMock[nome] = dist;
-});
-
-const capitais = ["são paulo", "rio de janeiro", "vitória", "curitiba", "porto alegre", "florianópolis", "goiânia", "cuiabá", "campo grande", "salvador", "recife", "fortaleza", "belo horizonte"];
-const adminUsers = ['krglima', 'admin'];
-
-const initialUsers = [
-    {login: 'admin', senha: 'cateleiameraki'},
-    {login: 'lnnatividade', senha: 'contab26'},
-    {login: 'lpcmacedo', senha: 'contab26'},
-    {login: 'jvrezende', senha: 'contab26'},
-    {login: 'prsilverio', senha: 'contab26'},
-    {login: 'krglima', senha: 'contab26'},
-    {login: 'bvsousa', senha: 'contab26'}
-];
-
-let usuarios = [...initialUsers];
-let auditorias = [];
-let smsContas = [];
-let notasFiscais = [];
-
-let usuarioAtual = localStorage.getItem('usuarioAtual') || null;
-let moduloAtivo = localStorage.getItem('moduloAtivo') || 'diarias';
-
-// INICIALIZAÇÃO DE SINCRONIZAÇÃO EM TEMPO REAL VIA FIRESTORE
-function inicializarSincronizacaoNuvem() {
-    if (!db) return;
-
-    // 1. Sincronização de Usuários
-    db.collection('usuarios').onSnapshot(snapshot => {
-        if (snapshot.empty) {
-            initialUsers.forEach(u => db.collection('usuarios').add(u));
-        } else {
-            usuarios = snapshot.docs.map(doc => ({ docId: doc.id, ...doc.data() }));
-            atualizarTabelaUsuariosAdmin();
-        }
-    }, err => console.log("Erro Firestore usuarios:", err));
-
-    // 2. Sincronização de Auditorias de Diárias
-    db.collection('auditorias').onSnapshot(snapshot => {
-        auditorias = snapshot.docs.map(doc => ({ docId: doc.id, ...doc.data() }));
-        auditorias.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-        atualizarTabelasGerais();
-    }, err => console.log("Erro Firestore auditorias:", err));
-
-    // 3. Sincronização de Contas SMS
-    db.collection('smsContas').onSnapshot(snapshot => {
-        smsContas = snapshot.docs.map(doc => ({ docId: doc.id, ...doc.data() }));
-        renderizarTabelaSMS(smsContas);
-    }, err => console.log("Erro Firestore smsContas:", err));
-
-    // 4. Sincronização de Notas Fiscais
-    db.collection('notasFiscais').onSnapshot(snapshot => {
-        notasFiscais = snapshot.docs.map(doc => ({ docId: doc.id, ...doc.data() }));
-        renderizarTabelaNF();
-    }, err => console.log("Erro Firestore notasFiscais:", err));
+:root {
+    --bg-main: #120c11;
+    --card-bg: rgba(30, 21, 29, 0.95);
+    --border-color: rgba(255, 255, 255, 0.12);
 }
 
-window.onload = () => {
-    popularDatalist();
-    verificarEstadoAutenticacao();
-    inicializarSincronizacaoNuvem();
-};
-
-function mostrarModal(titulo, mensagem, callback = null) {
-    let modalTitle = document.getElementById('modal-title');
-    let modalMsg = document.getElementById('modal-message');
-    if (modalTitle) modalTitle.innerText = titulo;
-    if (modalMsg) modalMsg.innerText = mensagem;
-    
-    let actions = document.getElementById('modal-actions');
-    if (actions) {
-        if (callback) {
-            actions.innerHTML = `
-                <button onclick="fecharModal()" class="bg-black/10 dark:bg-white/10 hover:bg-black/25 dark:hover:bg-white/20 px-4 py-2 rounded-xl font-bold text-xs">Cancelar</button>
-                <button id="modal-confirm-btn" class="bg-primary hover:bg-opacity-80 text-white px-5 py-2 rounded-xl font-bold text-xs shadow">Confirmar</button>
-            `;
-            let confirmBtn = document.getElementById('modal-confirm-btn');
-            if (confirmBtn) {
-                confirmBtn.onclick = () => {
-                    fecharModal();
-                    callback();
-                };
-            }
-        } else {
-            actions.innerHTML = `<button onclick="fecharModal()" class="bg-primary hover:bg-opacity-80 text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg text-xs">OK</button>`;
-        }
-    }
-    let customModal = document.getElementById('custom-modal');
-    if (customModal) customModal.classList.remove('hidden');
+body.light-mode {
+    --bg-main: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.96);
+    --border-color: rgba(0, 0, 0, 0.12);
+    color: #0f172a;
 }
 
-function fecharModal() {
-    let customModal = document.getElementById('custom-modal');
-    if (customModal) customModal.classList.add('hidden');
+body.light-mode #auth-screen,
+body.light-mode #system-selector-screen {
+    background-color: #f1f5f9 !important;
 }
 
-function fazerLogin(e) {
-    if (e) e.preventDefault();
-    let loginUserEl = document.getElementById('login-user');
-    let loginPassEl = document.getElementById('login-pass');
-    let msg = document.getElementById('auth-msg');
-
-    if (!loginUserEl || !loginPassEl) return;
-
-    let loginInput = loginUserEl.value.trim().toLowerCase();
-    let passInput = loginPassEl.value.trim();
-
-    let userFound = usuarios.find(u => u.login.toLowerCase() === loginInput && u.senha === passInput);
-    if (userFound) {
-        usuarioAtual = userFound.login;
-        localStorage.setItem('usuarioAtual', usuarioAtual);
-        if (msg) msg.classList.add('hidden');
-        verificarEstadoAutenticacao();
-    } else {
-        if (msg) {
-            msg.innerText = "Usuário ou senha incorretos!";
-            msg.classList.remove('hidden');
-        }
-    }
+body {
+    background-color: var(--bg-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-function fazerLogout() {
-    localStorage.removeItem('usuarioAtual');
-    usuarioAtual = null;
-    let authScreen = document.getElementById('auth-screen');
-    let systemScreen = document.getElementById('system-selector-screen');
-    let mainContainer = document.getElementById('main-app-container');
-    let loginUser = document.getElementById('login-user');
-    let loginPass = document.getElementById('login-pass');
-
-    if (authScreen) authScreen.classList.remove('hidden');
-    if (systemScreen) systemScreen.classList.add('hidden');
-    if (mainContainer) mainContainer.classList.add('hidden');
-    if (loginUser) loginUser.value = '';
-    if (loginPass) loginPass.value = '';
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
 }
 
-function verificarEstadoAutenticacao() {
-    let authScreen = document.getElementById('auth-screen');
-    let systemScreen = document.getElementById('system-selector-screen');
-    let mainContainer = document.getElementById('main-app-container');
-
-    if (usuarioAtual) {
-        if (authScreen) authScreen.classList.add('hidden');
-        
-        let lblSession = document.getElementById('user-session-lbl');
-        let lblNav = document.getElementById('nav-username');
-        if (lblSession) lblSession.innerText = usuarioAtual;
-        if (lblNav) lblNav.innerText = usuarioAtual;
-        
-        let isAdmin = adminUsers.includes(usuarioAtual ? usuarioAtual.toLowerCase() : '');
-        let cardGerenciar = document.getElementById('card-gerenciar');
-        let dropdownAdmin = document.getElementById('dropdown-admin-item');
-        let smsAdminBtn = document.getElementById('sms-admin-action-btn');
-        let adminLimpar = document.getElementById('admin-limpar-container');
-        let thAcoes = document.getElementById('th-acoes-historico');
-
-        if (isAdmin) {
-            if (cardGerenciar) cardGerenciar.style.display = 'flex';
-            if (dropdownAdmin) dropdownAdmin.style.display = 'block';
-            if (smsAdminBtn) smsAdminBtn.classList.remove('hidden');
-            if (adminLimpar) adminLimpar.classList.remove('hidden');
-            if (thAcoes) thAcoes.classList.remove('hidden');
-        } else {
-            if (cardGerenciar) cardGerenciar.style.display = 'none';
-            if (dropdownAdmin) dropdownAdmin.style.display = 'none';
-            if (smsAdminBtn) smsAdminBtn.classList.add('hidden');
-            if (adminLimpar) adminLimpar.classList.add('hidden');
-            if (thAcoes) thAcoes.classList.add('hidden');
-        }
-
-        if (localStorage.getItem('emModulo') === 'true') {
-            abrirModulo(moduloAtivo);
-        } else {
-            if (systemScreen) systemScreen.classList.remove('hidden');
-            if (mainContainer) mainContainer.classList.add('hidden');
-        }
-        atualizarTabelasGerais();
-    } else {
-        if (authScreen) authScreen.classList.remove('hidden');
-        if (systemScreen) systemScreen.classList.add('hidden');
-        if (mainContainer) mainContainer.classList.add('hidden');
-    }
+.glass-modal {
+    background: rgba(26, 18, 25, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
 }
 
-function abrirModulo(nomeModulo) {
-    if (nomeModulo === 'gerenciar' && !adminUsers.includes(usuarioAtual ? usuarioAtual.toLowerCase() : '')) {
-        mostrarModal("Acesso Restrito", "Apenas administradores podem acessar o painel de gerenciamento.");
-        return;
-    }
-    moduloAtivo = nomeModulo;
-    localStorage.setItem('moduloAtivo', moduloAtivo);
-    localStorage.setItem('emModulo', 'true');
-
-    let systemScreen = document.getElementById('system-selector-screen');
-    let mainContainer = document.getElementById('main-app-container');
-    let dropdown = document.getElementById('dropdown-sistemas');
-
-    if (systemScreen) systemScreen.classList.add('hidden');
-    if (mainContainer) mainContainer.classList.remove('hidden');
-    if (dropdown) dropdown.classList.add('hidden');
-
-    document.querySelectorAll('.system-module').forEach(el => el.classList.add('hidden'));
-    
-    let targetModule = document.getElementById('module-' + nomeModulo);
-    if (targetModule) targetModule.classList.remove('hidden');
-
-    let titulos = {
-        'diarias': 'Sistema de Auditoria de Despesas de Diárias',
-        'sms': 'Sistema de Gestão Financeira e Orçamentária - SMS',
-        'notafiscal': 'Sistema de Auditoria de Nota Fiscal',
-        'gerenciar': 'Gerenciar Sistema (Painel Administrativo)'
-    };
-    let titleEl = document.getElementById('current-system-title');
-    if (titleEl) titleEl.innerText = titulos[nomeModulo] || 'Sistema Contábil';
+body.light-mode .glass-modal {
+    background: rgba(255, 255, 255, 0.98);
 }
 
-function mudarModulo(nomeModulo) {
-    abrirModulo(nomeModulo);
+.glass-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-function toggleMenuSistemas() {
-    let drop = document.getElementById('dropdown-sistemas');
-    if (drop) drop.classList.toggle('hidden');
+body.light-mode .glass-input {
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: #0f172a !important;
 }
 
-window.onclick = function(event) {
-    if (!event.target.closest('.relative')) {
-        let drop = document.getElementById('dropdown-sistemas');
-        if (drop) drop.classList.add('hidden');
-    }
-};
-
-function toggleTheme() {
-    let isLight = document.body.classList.toggle('light-mode');
-    let icon = document.getElementById('theme-icon');
-    if (isLight) {
-        if (icon) icon.className = 'fas fa-moon';
-        localStorage.setItem('theme', 'light');
-    } else {
-        if (icon) icon.className = 'fas fa-sun';
-        localStorage.setItem('theme', 'dark');
-    }
+/* Camadas de exibição das telas */
+#auth-screen {
+    z-index: 100;
 }
 
-if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light-mode');
-    let icon = document.getElementById('theme-icon');
-    if (icon) icon.className = 'fas fa-moon';
+#system-selector-screen {
+    z-index: 90;
 }
 
-function openDiariasTab(tabName) {
-    document.querySelectorAll('.diaria-tab-content').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.diaria-tab-btn').forEach(el => {
-        el.classList.remove('bg-primary', 'text-white', 'shadow-md');
-        el.classList.add('bg-black/5', 'dark:bg-white/5');
-    });
-    
-    let tabContent = document.getElementById('diarias-' + tabName);
-    if (tabContent) tabContent.classList.remove('hidden');
-    
-    let btn = document.getElementById('btn-tab-' + tabName);
-    if (btn) {
-        btn.classList.remove('bg-black/5', 'dark:bg-white/5');
-        btn.classList.add('bg-primary', 'text-white', 'shadow-md');
-    }
-}
-
-function popularDatalist() {
-    const datalist = document.getElementById('cidades-list');
-    if (!datalist) return;
-    datalist.innerHTML = '';
-    listaCidades.forEach(cidade => {
-        let option = document.createElement('option');
-        option.value = cidade;
-        datalist.appendChild(option);
-    });
-}
-
-function getDistanciaCidade(cidadeNome) {
-    if (!cidadeNome) return null;
-    let parts = cidadeNome.split('(');
-    let nomeLimpo = parts[0].trim().toLowerCase();
-    return cidadesMock[nomeLimpo] !== undefined ? cidadesMock[nomeLimpo] : null;
-}
-
-function isCapital(cidadeNome) {
-    if (!cidadeNome) return false;
-    let parts = cidadeNome.split('(');
-    let nomeLimpo = parts[0].trim().toLowerCase();
-    return capitais.includes(nomeLimpo);
-}
-
-function checkDistance(prefix) {
-    let cidadeEl = document.getElementById(`${prefix}-cidade`);
-    if (!cidadeEl || !cidadeEl.value) return;
-    
-    let cidade = cidadeEl.value;
-    let dist = getDistanciaCidade(cidade);
-    let distContainer = document.getElementById(`${prefix}-dist-container`);
-    let distInput = document.getElementById(`${prefix}-distancia`);
-    let calcDistSpan = document.getElementById(`${prefix}-calc-dist`);
-
-    if (dist !== null) {
-        if (distContainer) distContainer.classList.add('hidden');
-        if (distInput) distInput.value = dist;
-        if (calcDistSpan) calcDistSpan.innerText = dist + " km";
-    } else {
-        if (distContainer) distContainer.classList.remove('hidden');
-        if (distInput) distInput.value = "";
-        if (calcDistSpan) calcDistSpan.innerText = "-- km (Digite)";
-    }
-    calcularTempoEValor(prefix);
-}
-
-function parseDates(inicioStr, terminoStr) {
-    if (!inicioStr || !terminoStr) return { horasDecimais: 0, str: "-- h -- min" };
-    let d1 = new Date(inicioStr);
-    let d2 = new Date(terminoStr);
-    let diffMs = d2 - d1;
-    if (diffMs < 0) return { horasDecimais: 0, str: "Data inválida" };
-    let diffHrs = diffMs / (1000 * 60 * 60);
-    let h = Math.floor(diffHrs);
-    let m = Math.round((diffHrs - h) * 60);
-    return { horasDecimais: diffHrs, str: `${h}h ${m}min` };
-}
-
-function calculaRegrasDiaria(cargo, destino, distancia, horas, fracaoPrevia = null) {
-    let parts = destino ? destino.split('(') : [''];
-    let destinoLower = parts[0].trim().toLowerCase();
-    let isPrefeito = (cargo === 'prefeito');
-
-    if (isPrefeito) {
-        let v_1 = distancia <= 500 ? 853 : 1337;
-        let v_75 = distancia <= 500 ? 640 : 1003;
-        let v_50 = distancia <= 500 ? 427 : 669;
-        if (fracaoPrevia) return v_1 * fracaoPrevia;
-        if (horas <= 12) return v_50;
-        if (horas <= 18) return v_75;
-        return v_1;
-    }
-
-    let isBSB = destinoLower.includes('brasilia') || destinoLower.includes('brasília');
-    let isBH = destinoLower === 'belo horizonte' || destinoLower === 'bh';
-    let isCap = isCapital(destinoLower);
-
-    if (fracaoPrevia) {
-        let base_1 = isBSB ? 517 : (isBH ? 265 : (isCap ? 287 : (distancia <= 50 ? 50 : (distancia <= 150 ? 132 : (distancia <= 390 ? 265 : 300)))));
-        return base_1 * fracaoPrevia;
-    }
-
-    if (isBSB) return horas <= 12 ? 259 : (horas <= 18 ? 388 : 517);
-    if (isBH) return horas <= 12 ? 133 : (horas <= 18 ? 199 : 265);
-    if (isCap) return horas <= 12 ? 144 : (horas <= 18 ? 215 : 287);
-
-    if (distancia <= 50) {
-        if (horas < 4) return 0;
-        if (horas <= 12) return 25;
-        if (horas <= 18) return 38;
-        return 50;
-    }
-    if (distancia <= 150) return horas < 4 ? 0 : (horas > 12 ? 265 : 132);
-    if (distancia <= 390) return horas > 12 ? 265 : 132;
-    return horas <= 12 ? 150 : (horas <= 18 ? 225 : 300);
-}
-
-function calcularTempoEValor(prefix) {
-    let cargoEl = document.getElementById(`${prefix}-cargo`);
-    let cidadeEl = document.getElementById(`${prefix}-cidade`);
-    let distInputEl = document.getElementById(`${prefix}-distancia`);
-
-    let cargo = cargoEl ? cargoEl.value : 'servidor';
-    let cidade = cidadeEl ? cidadeEl.value : "";
-    let distInput = distInputEl ? distInputEl.value : "";
-    let distancia = parseFloat(distInput) || getDistanciaCidade(cidade) || 0;
-    
-    let calcDistSpan = document.getElementById(`${prefix}-calc-dist`);
-    if (calcDistSpan) {
-        calcDistSpan.innerText = distancia > 0 ? `${distancia} km` : "-- km";
-    }
-
-    if (prefix === 'prev') {
-        let fracaoEl = document.getElementById('prev-fracao');
-        let fracao = fracaoEl ? parseFloat(fracaoEl.value) : 1;
-        let valor = calculaRegrasDiaria(cargo, cidade, distancia, 0, fracao);
-        let valorEl = document.getElementById('prev-valor');
-        if (valorEl) valorEl.innerText = valor.toLocaleString('pt-BR', {minimumFractionDigits: 2});
-    } else {
-        let inicioEl = document.getElementById(`${prefix}-inicio`);
-        let terminoEl = document.getElementById(`${prefix}-termino`);
-        let inicio = inicioEl ? inicioEl.value : "";
-        let termino = terminoEl ? terminoEl.value : "";
-        let tempoInfo = parseDates(inicio, termino);
-        
-        let tempoEl = document.getElementById(`${prefix}-tempo`);
-        if (tempoEl) tempoEl.innerText = tempoInfo.str;
-
-        let valorDireito = calculaRegrasDiaria(cargo, cidade, distancia, tempoInfo.horasDecimais, null);
-        
-        if (prefix === 'comp') {
-            let valorDireitoEl = document.getElementById('comp-valor-direito');
-            if (valorDireitoEl) valorDireitoEl.innerText = valorDireito.toLocaleString('pt-BR', {minimumFractionDigits: 2});
-            
-            let recebidoEl = document.getElementById('comp-recebido');
-            let recebido = recebidoEl ? (parseFloat(recebidoEl.value) || 0) : 0;
-            let complemento = Math.max(0, valorDireito - recebido);
-            
-            let valorEl = document.getElementById('comp-valor');
-            if (valorEl) valorEl.innerText = complemento.toLocaleString('pt-BR', {minimumFractionDigits: 2});
-        } else if (prefix === 'real') {
-            let valorEl = document.getElementById('real-valor');
-            if (valorEl) valorEl.innerText = valorDireito.toLocaleString('pt-BR', {minimumFractionDigits: 2});
-        }
-    }
-}
-
-function salvarAuditoria(e, tipo) {
-    e.preventDefault();
-    let prefix = tipo === 'Prévia' ? 'prev' : (tipo === 'Complementação' ? 'comp' : 'real');
-
-    let inicioEl = document.getElementById(`${prefix}-inicio`);
-    let dataViagem = inicioEl && inicioEl.value ? inicioEl.value.split('T')[0] : new Date().toISOString().split('T')[0];
-    
-    let cidadeEl = document.getElementById(`${prefix}-cidade`);
-    let parts = cidadeEl && cidadeEl.value ? cidadeEl.value.split('(') : ['N/I'];
-    let cidade = parts[0].trim();
-    
-    let cargoEl = document.getElementById(`${prefix}-cargo`);
-    let cargo = cargoEl ? cargoEl.value : "servidor";
-    
-    let valorEl = document.getElementById(`${prefix}-valor`);
-    let valor = valorEl ? valorEl.innerText : "0,00";
-    
-    let detalhes = "";
-    if (tipo === 'Prévia') {
-        let fracaoEl = document.getElementById('prev-fracao');
-        detalhes = fracaoEl ? fracaoEl.options[fracaoEl.selectedIndex].text : "1 Diária";
-    } else {
-        let tempoEl = document.getElementById(`${prefix}-tempo`);
-        detalhes = tempoEl ? tempoEl.innerText : "--";
-    }
-
-    let novaAuditoria = {
-        tipo,
-        data: dataViagem,
-        cidade,
-        cargo,
-        detalhes,
-        valor,
-        responsavel: usuarioAtual,
-        timestamp: Date.now()
-    };
-
-    if (db) {
-        db.collection('auditorias').add(novaAuditoria).then(() => {
-            mostrarModal("Sucesso", `${tipo} salva com sucesso na nuvem!`);
-            e.target.reset();
-            let distContainer = document.getElementById(`${prefix}-dist-container`);
-            if (distContainer) distContainer.classList.add('hidden');
-            if (valorEl) valorEl.innerText = "0,00";
-        }).catch(err => {
-            mostrarModal("Erro", "Erro ao salvar na nuvem: " + err.message);
-        });
-    }
-}
-
-function apagarItemHistorico(docId) {
-    if (!adminUsers.includes(usuarioAtual ? usuarioAtual.toLowerCase() : '')) return;
-    mostrarModal("Confirmação", "Deseja realmente apagar este registro da nuvem?", () => {
-        if (db && docId) {
-            db.collection('auditorias').doc(docId).delete().then(() => {
-                mostrarModal("Sucesso", "Registro removido com sucesso!");
-            });
-        }
-    });
-}
-
-function limparHistoricoGeral() {
-    if (!adminUsers.includes(usuarioAtual ? usuarioAtual.toLowerCase() : '')) return;
-    mostrarModal("Atenção", "Deseja apagar todo o histórico de auditorias salvo na nuvem?", () => {
-        if (db) {
-            db.collection('auditorias').get().then(snapshot => {
-                let batch = db.batch();
-                snapshot.docs.forEach(doc => batch.delete(doc.ref));
-                return batch.commit();
-            }).then(() => {
-                mostrarModal("Sucesso", "Histórico de auditorias zerado com sucesso!");
-            });
-        }
-    });
-}
-
-function formatVal(val) {
-    if (!val || val === '' || val === '0,00' || val === null || val === undefined) return '-';
-    let s = String(val).trim();
-    return s === '' ? '-' : s;
-}
-
-function renderizarTabelaSMS(dados) {
-    let tbody = document.getElementById('sms-table-body');
-    if (!tbody) return;
-    tbody.innerHTML = '';
-    let isAdmin = adminUsers.includes(usuarioAtual ? usuarioAtual.toLowerCase() : '');
-
-    dados.forEach((item, index) => {
-        let actionCol = isAdmin ? `<td class="px-2 py-2.5 text-right align-top"><button onclick="removerContaSMS('${item.docId}')" class="text-red-600 dark:text-red-400 hover:opacity-85 px-2 py-1 rounded bg-red-900/10 dark:bg-red-900/30 border border-red-500/30 text-[11px]"><i class="fas fa-trash-alt"></i></button></td>` : '<td class="px-2 py-2.5 text-right align-top"><span class="opacity-40 text-[11px]">Consulta</span></td>';
-
-        let tr = document.createElement('tr');
-        tr.className = "hover:bg-black/5 dark:hover:bg-white/5 transition border-b border-gray-200/50 dark:border-white/5";
-        tr.innerHTML = `
-            <td class="px-2.5 py-2.5 font-bold text-secondary align-top text-[11px] break-words">${formatVal(item.conta)}</td>
-            <td class="px-2 py-2.5 font-semibold text-center align-top text-[11px] break-words">${formatVal(item.fonte)}</td>
-            <td class="px-2 py-2.5 align-top text-[11px] break-words">${formatVal(item.repasse)}</td>
-            <td class="px-2 py-2.5 text-center align-top text-[11px] break-words">${formatVal(item.aplicacao)}</td>
-            <td class="px-2 py-2.5 align-top text-[11px] break-words leading-relaxed">${formatVal(item.portaria)}</td>
-            <td class="px-2 py-2.5 text-center align-top text-[11px] font-semibold text-amber-500 dark:text-amber-400 break-words">${formatVal(item.visa)}</td>
-            <td class="px-2.5 py-2.5 align-top text-[11px] font-medium break-words leading-relaxed">${formatVal(item.objeto)}</td>
-            <td class="px-2.5 py-2.5 align-top text-[11px] opacity-90 break-words leading-relaxed">${formatVal(item.utilizacao)}</td>
-            ${actionCol}
-        `;
-        tbody.appendChild(tr);
-    });
-}
-
-function filtrarContasSMS() {
-    let searchEl = document.getElementById('sms-search-input');
-    if (!searchEl) return;
-    let termo = searchEl.value.toLowerCase();
-    let filtrados = smsContas.filter(item => {
-        return Object.values(item).some(val => String(val).toLowerCase().includes(termo));
-    });
-    renderizarTabelaSMS(filtrados);
-}
-
-function abrirModalAddContaSMS() {
-    let modal = document.getElementById('modal-sms');
-    if (modal) modal.classList.remove('hidden');
-}
-
-function fecharModalSMS() {
-    let modal = document.getElementById('modal-sms');
-    if (modal) modal.classList.add('hidden');
-}
-
-function salvarNovaContaSMS(e) {
-    e.preventDefault();
-    let nova = {
-        conta: document.getElementById('sms-conta').value,
-        fonte: document.getElementById('sms-fonte').value,
-        repasse: document.getElementById('sms-repasse').value,
-        aplicacao: document.getElementById('sms-aplicacao').value,
-        portaria: document.getElementById('sms-portaria').value,
-        visa: document.getElementById('sms-visa').value,
-        objeto: document.getElementById('sms-objeto').value,
-        utilizacao: document.getElementById('sms-utilizacao').value
-    };
-
-    if (db) {
-        db.collection('smsContas').add(nova).then(() => {
-            fecharModalSMS();
-            e.target.reset();
-            mostrarModal("Sucesso", "Nova conta salva com sucesso na nuvem!");
-        });
-    }
-}
-
-function removerContaSMS(docId) {
-    if (!adminUsers.includes(usuarioAtual ? usuarioAtual.toLowerCase() : '')) return;
-    mostrarModal("Excluir Conta", "Deseja remover esta conta do banco de dados na nuvem?", () => {
-        if (db && docId) {
-            db.collection('smsContas').doc(docId).delete().then(() => {
-                mostrarModal("Sucesso", "Conta removida com sucesso!");
-            });
-        }
-    });
-}
-
-function renderizarTabelaNF() {
-    let tbody = document.getElementById('nf-table-body');
-    if (!tbody) return;
-    tbody.innerHTML = '';
-    notasFiscais.forEach((nf) => {
-        let tr = document.createElement('tr');
-        tr.className = "hover:bg-black/5 dark:hover:bg-white/5 transition";
-        tr.innerHTML = `
-            <td class="px-4 py-3 font-bold">${nf.numero}</td>
-            <td class="px-4 py-3">${nf.fornecedor}</td>
-            <td class="px-4 py-3">${nf.data ? nf.data.split('-').reverse().join('/') : '--/--/----'}</td>
-            <td class="px-4 py-3 font-semibold">R$ ${nf.bruto}</td>
-            <td class="px-4 py-3 text-red-600 dark:text-red-400">R$ ${nf.retencoes}</td>
-            <td class="px-4 py-3"><span class="px-2 py-0.5 rounded text-[10px] bg-green-500/20 text-green-700 dark:text-green-300 border border-green-500/30">${nf.status}</span></td>
-            <td class="px-4 py-3 text-right">
-                <button onclick="removerNF('${nf.docId}')" class="text-red-600 dark:text-red-400 hover:opacity-85 px-2 py-1"><i class="fas fa-trash-alt"></i></button>
-            </td>
-        `;
-        tbody.appendChild(tr);
-    });
-}
-
-function abrirModalNovaNota() {
-    let numero = prompt("Digite o número da Nota Fiscal:");
-    if (!numero) return;
-    let fornecedor = prompt("Digite o nome/CNPJ do fornecedor:");
-    let bruto = prompt("Digite o valor bruto (Ex: 5000.00):");
-    let retencoes = prompt("Digite o valor das retenções (Ex: 150.00):");
-
-    if (numero && fornecedor && bruto && db) {
-        db.collection('notasFiscais').add({
-            numero,
-            fornecedor,
-            data: new Date().toISOString().split('T')[0],
-            bruto,
-            retencoes: retencoes || '0,00',
-            status: 'Auditada'
-        }).then(() => {
-            mostrarModal("Sucesso", "Nota fiscal registrada na nuvem!");
-        });
-    }
-}
-
-function removerNF(docId) {
-    if (db && docId) {
-        db.collection('notasFiscais').doc(docId).delete().then(() => {
-            mostrarModal("Sucesso", "Nota fiscal removida!");
-        });
-    }
-}
-
-function openAdminTab(tab) {
-    document.querySelectorAll('.admin-tab-content').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.admin-tab-btn').forEach(el => {
-        el.classList.remove('bg-primary', 'text-white');
-        el.classList.add('bg-black/5', 'dark:bg-white/5');
-    });
-    let tabContent = document.getElementById('admin-tab-' + tab);
-    if (tabContent) tabContent.classList.remove('hidden');
-    
-    let btn = document.getElementById('btn-admin-' + tab);
-    if (btn) {
-        btn.classList.remove('bg-black/5', 'dark:bg-white/5');
-        btn.classList.add('bg-primary', 'text-white');
-    }
-}
-
-function cadastrarUsuarioAdmin(e) {
-    e.preventDefault();
-    let userEl = document.getElementById('adm-novo-user');
-    let passEl = document.getElementById('adm-novo-pass');
-    if (!userEl || !passEl) return;
-
-    let login = userEl.value.trim();
-    let senha = passEl.value;
-
-    if (usuarios.some(u => u.login.toLowerCase() === login.toLowerCase())) {
-        mostrarModal("Aviso", "Este usuário já existe no sistema!");
-        return;
-    }
-
-    if (db) {
-        db.collection('usuarios').add({login, senha}).then(() => {
-            e.target.reset();
-            mostrarModal("Sucesso", "Novo usuário cadastrado com sucesso na nuvem!");
-        });
-    }
-}
-
-function removerUsuarioAdmin(docId, login) {
-    if (login.toLowerCase() === 'admin' || login.toLowerCase() === 'krglima') {
-        mostrarModal("Aviso", "Este usuário protegido não pode ser removido.");
-        return;
-    }
-    mostrarModal("Remover Acesso", `Deseja remover o acesso de ${login} na nuvem?`, () => {
-        if (db && docId) {
-            db.collection('usuarios').doc(docId).delete().then(() => {
-                mostrarModal("Sucesso", "Acesso removido com sucesso!");
-            });
-        }
-    });
-}
-
-function atualizarTabelaUsuariosAdmin() {
-    let tbody = document.getElementById('admin-users-table');
-    if (!tbody) return;
-    tbody.innerHTML = '';
-    usuarios.forEach(u => {
-        let isProtected = (u.login.toLowerCase() === 'admin' || u.login.toLowerCase() === 'krglima');
-        let actionCol = !isProtected ? `<button onclick="removerUsuarioAdmin('${u.docId}', '${u.login}')" class="text-red-600 dark:text-red-400 hover:opacity-85 text-xs px-2.5 py-1 rounded bg-red-900/10 dark:bg-red-900/30 border border-red-500/30">Remover</button>` : '<span class="opacity-40 text-xs italic">Protegido</span>';
-
-        let tr = document.createElement('tr');
-        tr.className = "hover:bg-black/5 dark:hover:bg-white/5 transition";
-        tr.innerHTML = `
-            <td class="px-4 py-3 font-semibold"><i class="fas fa-user-circle mr-2 opacity-60"></i> ${u.login}</td>
-            <td class="px-4 py-3 text-right">${actionCol}</td>
-        `;
-        tbody.appendChild(tr);
-    });
-}
-
-function atualizarTabelasGerais() {
-    let dashTotal = document.getElementById('dash-total');
-    if (dashTotal) dashTotal.innerText = auditorias.length;
-    
-    let dashPrevias = document.getElementById('dash-previas');
-    if (dashPrevias) dashPrevias.innerText = auditorias.filter(a => a.tipo === 'Prévia').length;
-    
-    let dashComp = document.getElementById('dash-complementacoes');
-    if (dashComp) dashComp.innerText = auditorias.filter(a => a.tipo === 'Complementação').length;
-    
-    let dashReal = document.getElementById('dash-realizadas');
-    if (dashReal) dashReal.innerText = auditorias.filter(a => a.tipo === 'Realizada').length;
-
-    let tbodyHist = document.getElementById('history-table-body');
-    if (tbodyHist) {
-        tbodyHist.innerHTML = '';
-        let isAdmin = adminUsers.includes(usuarioAtual ? usuarioAtual.toLowerCase() : '');
-
-        auditorias.forEach(a => {
-            let badgeClass = a.tipo === 'Prévia' ? 'bg-green-500/20 text-green-700 dark:text-green-300 border-green-500/30' : 
-                           (a.tipo === 'Complementação' ? 'bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 border-yellow-500/30' : 'bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-500/30');
-            
-            let actionBtn = isAdmin ? `<td class="px-4 py-3 text-right"><button onclick="apagarItemHistorico('${a.docId}')" class="text-red-600 dark:text-red-400 hover:opacity-85 px-2 py-1 rounded bg-red-900/10 dark:bg-red-900/30 border border-red-500/30"><i class="fas fa-trash-alt"></i></button></td>` : '';
-
-            let tr = document.createElement('tr');
-            tr.className = "hover:bg-black/5 dark:hover:bg-white/5 transition";
-            tr.innerHTML = `
-                <td class="px-4 py-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold border ${badgeClass}">${a.tipo}</span></td>
-                <td class="px-4 py-3">${a.data ? a.data.split('-').reverse().join('/') : '--/--/----'}</td>
-                <td class="px-4 py-3 font-semibold">${a.cidade}</td>
-                <td class="px-4 py-3 capitalize">${a.cargo}</td>
-                <td class="px-4 py-3">${a.detalhes}</td>
-                <td class="px-4 py-3 font-bold text-secondary">R$ ${a.valor}</td>
-                <td class="px-4 py-3">${a.responsavel}</td>
-                ${actionBtn}
-            `;
-            tbodyHist.appendChild(tr);
-        });
-    }
-
-    renderizarTabelaSMS(smsContas);
-    renderizarTabelaNF();
-    atualizarTabelaUsuariosAdmin();
+#custom-modal {
+    z-index: 200;
 }
