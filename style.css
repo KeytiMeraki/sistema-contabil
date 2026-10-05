@@ -1,0 +1,106 @@
+/* style.css - Estilos Customizados do Sistema Contábil Integrado */
+:root {
+    --color-primary: #6B1C33;
+    --color-primary-hover: #521326;
+    --color-secondary: #C29B28;
+    --bg-dark: #120c11;
+    --text-dark: #f3f4f6;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo Claro (Light Mode) */
+body.light-mode {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+body.light-mode .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .glass-modal {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #0f172a;
+}
+
+body.light-mode .glass-input {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #0f172a;
+}
+
+body.light-mode .glass-input:focus {
+    background: rgba(0, 0, 0, 0.07);
+    border-color: var(--color-secondary);
+}
+
+/* Estilos de Vidro (Glassmorphism) */
+.glass-card {
+    background: rgba(26, 16, 24, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-modal {
+    background: rgba(20, 12, 18, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(194, 155, 40, 0.3);
+}
+
+.glass-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    outline: none;
+}
+
+.glass-input:focus {
+    border-color: var(--color-secondary);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 2px rgba(194, 155, 40, 0.2);
+}
+
+/* Transições e Animações */
+.transition-all {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(194, 155, 40, 0.4);
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(194, 155, 40, 0.7);
+}
+/* Garantia de alto contraste para cabeçalhos de tabelas */
+thead th {
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+}
+
+body.light-mode thead th {
+    color: #0f172a;
+}
