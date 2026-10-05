@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <!-- 1. TELA DE LOGIN / BLOQUEIO INICIAL (FUNDO SÓLIDO TOTALMENTE OPACO) -->
+    <!-- 1. TELA DE LOGIN / BLOQUEIO INICIAL -->
     <div id="auth-screen" class="fixed inset-0 z-40 flex items-center justify-center p-4 bg-[#120c11]">
         <div class="glass-card rounded-3xl max-w-md w-full p-8 relative overflow-hidden shadow-2xl border border-white/10">
             <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-secondary to-primary"></div>
@@ -60,23 +60,23 @@
                 <div class="inline-flex p-4 bg-primary/20 text-secondary rounded-2xl mb-4 shadow-inner border border-secondary/30">
                     <i class="fas fa-shield-alt text-4xl"></i>
                 </div>
-                <h1 class="text-2xl font-black tracking-tight text-white">Sistema Contábil Integrado</h1>
-                <p class="text-xs opacity-75 mt-1 uppercase tracking-wider font-semibold text-gray-300">Prefeitura Municipal de Lavras - MG</p>
+                <h1 class="text-2xl font-black tracking-tight system-title-txt">Sistema Contábil Integrado</h1>
+                <p class="text-xs opacity-75 mt-1 uppercase tracking-wider font-semibold system-subtitle-txt">Prefeitura Municipal de Lavras - MG</p>
             </div>
 
             <form id="form-login" onsubmit="fazerLogin(event)" class="space-y-5">
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider opacity-85 mb-2 text-gray-200">Usuário</label>
+                    <label class="block text-xs font-bold uppercase tracking-wider opacity-85 mb-2 label-txt">Usuário</label>
                     <div class="relative">
-                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center opacity-60 text-gray-300"><i class="fas fa-user"></i></span>
-                        <input type="text" id="login-user" class="glass-input pl-11 block w-full rounded-xl p-3.5 text-sm font-medium transition text-white bg-white/5 border border-white/10 focus:border-secondary focus:outline-none" placeholder="Digite seu usuário" required>
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center opacity-60 input-icon"><i class="fas fa-user"></i></span>
+                        <input type="text" id="login-user" class="glass-input pl-11 block w-full rounded-xl p-3.5 text-sm font-medium transition focus:border-secondary focus:outline-none" placeholder="Digite seu usuário" required>
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider opacity-85 mb-2 text-gray-200">Senha</label>
+                    <label class="block text-xs font-bold uppercase tracking-wider opacity-85 mb-2 label-txt">Senha</label>
                     <div class="relative">
-                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center opacity-60 text-gray-300"><i class="fas fa-lock"></i></span>
-                        <input type="password" id="login-pass" class="glass-input pl-11 block w-full rounded-xl p-3.5 text-sm font-medium transition text-white bg-white/5 border border-white/10 focus:border-secondary focus:outline-none" placeholder="••••••••" required>
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center opacity-60 input-icon"><i class="fas fa-lock"></i></span>
+                        <input type="password" id="login-pass" class="glass-input pl-11 block w-full rounded-xl p-3.5 text-sm font-medium transition focus:border-secondary focus:outline-none" placeholder="••••••••" required>
                     </div>
                 </div>
                 <button type="submit" class="w-full bg-[#6B1C33] hover:bg-[#521326] text-white py-3.5 rounded-xl shadow-lg font-bold transition transform active:scale-95 flex items-center justify-center gap-2">
@@ -91,8 +91,8 @@
     <div id="system-selector-screen" class="fixed inset-0 z-30 flex flex-col items-center justify-center p-6 hidden overflow-y-auto bg-[#120c11]">
         <div class="max-w-5xl w-full mx-auto text-center mb-8">
             <span class="text-secondary font-bold text-xs uppercase tracking-widest bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">Portal de Sistemas</span>
-            <h2 class="text-3xl md:text-4xl font-black mt-3 mb-2 text-white">Você deseja acessar qual sistema?</h2>
-            <p class="text-sm opacity-85 text-gray-300">Selecione abaixo o módulo desejado para iniciar as operações contábeis e de auditoria.</p>
+            <h2 class="text-3xl md:text-4xl font-black mt-3 mb-2 main-head-txt">Você deseja acessar qual sistema?</h2>
+            <p class="text-sm opacity-85 main-sub-txt">Selecione abaixo o módulo desejado para iniciar as operações contábeis e de auditoria.</p>
         </div>
 
         <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -103,8 +103,8 @@
                     <div class="w-12 h-12 rounded-xl bg-primary/20 text-secondary flex items-center justify-center text-xl mb-4 border border-secondary/30">
                         <i class="fas fa-file-invoice-dollar"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition text-white">Sistema de Auditoria de Despesas de Diárias</h3>
-                    <p class="text-xs opacity-80 leading-relaxed text-gray-300">Cálculos de diárias prévias, complementações e viagens realizadas com base na Lei Municipal nº 4.937/2025.</p>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition card-head-txt">Sistema de Auditoria de Despesas de Diárias</h3>
+                    <p class="text-xs opacity-80 leading-relaxed card-sub-txt">Cálculos de diárias prévias, complementações e viagens realizadas com base na Lei Municipal nº 4.937/2025.</p>
                 </div>
                 <div class="mt-6 flex items-center text-xs font-bold text-secondary gap-2">
                     <span>Acessar Módulo</span> <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
@@ -118,8 +118,8 @@
                     <div class="w-12 h-12 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center text-xl mb-4 border border-secondary/30">
                         <i class="fas fa-chart-pie"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition text-white">Sistema de Gestão Financeira e Orçamentária - SMS</h3>
-                    <p class="text-xs opacity-80 leading-relaxed text-gray-300">Pesquisa integrada em contas, fontes, emendas, portarias, VISA, resoluções e objetos de repasse (SUSÃO e convênios).</p>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition card-head-txt">Sistema de Gestão Financeira e Orçamentária - SMS</h3>
+                    <p class="text-xs opacity-80 leading-relaxed card-sub-txt">Pesquisa integrada em contas, fontes, emendas, portarias, VISA, resoluções e objetos de repasse (SUSÃO e convênios).</p>
                 </div>
                 <div class="mt-6 flex items-center text-xs font-bold text-secondary gap-2">
                     <span>Acessar Módulo</span> <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
@@ -130,11 +130,11 @@
             <div onclick="abrirModulo('notafiscal')" class="glass-card rounded-2xl p-6 cursor-pointer hover:border-secondary transition-all transform hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between border border-white/10">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/30 transition"></div>
                 <div>
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-4 border border-blue-500/30">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-500 dark:text-blue-400 flex items-center justify-center text-xl mb-4 border border-blue-500/30">
                         <i class="fas fa-receipt"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition text-white">Sistema de Auditoria de Nota Fiscal</h3>
-                    <p class="text-xs opacity-80 leading-relaxed text-gray-300">Auditoria fiscal de notas, validação de itens, alíquotas, retenções tributárias e conformidade de fornecedores.</p>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition card-head-txt">Sistema de Auditoria de Nota Fiscal</h3>
+                    <p class="text-xs opacity-80 leading-relaxed card-sub-txt">Auditoria fiscal de notas, validação de itens, alíquotas, retenções tributárias e conformidade de fornecedores.</p>
                 </div>
                 <div class="mt-6 flex items-center text-xs font-bold text-secondary gap-2">
                     <span>Acessar Módulo</span> <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
@@ -145,11 +145,11 @@
             <div id="card-gerenciar" onclick="abrirModulo('gerenciar')" class="glass-card rounded-2xl p-6 cursor-pointer hover:border-secondary transition-all transform hover:-translate-y-1 group relative overflow-hidden flex flex-col justify-between border border-dashed border-secondary/40">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/30 transition"></div>
                 <div>
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4 border border-purple-500/30">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-4 border border-purple-500/30">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition text-white">Gerenciar Sistema</h3>
-                    <p class="text-xs opacity-80 leading-relaxed text-gray-300">Painel administrativo exclusivo para controle de perfis, senhas e atualização de fontes/repasses SMS.</p>
+                    <h3 class="text-lg font-bold mb-2 group-hover:text-secondary transition card-head-txt">Gerenciar Sistema</h3>
+                    <p class="text-xs opacity-80 leading-relaxed card-sub-txt">Painel administrativo exclusivo para controle de perfis, senhas e atualização de fontes/repasses SMS.</p>
                 </div>
                 <div class="mt-6 flex items-center text-xs font-bold text-secondary gap-2">
                     <span>Acessar Painel Admin</span> <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
@@ -158,7 +158,7 @@
         </div>
 
         <div class="mt-8">
-            <button onclick="fazerLogout()" class="text-xs opacity-85 hover:opacity-100 flex items-center gap-2 bg-white/5 hover:bg-white/10 px-4 py-2 rounded-xl transition border border-white/10 text-white">
+            <button onclick="fazerLogout()" class="text-xs opacity-85 hover:opacity-100 flex items-center gap-2 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 px-4 py-2 rounded-xl transition border border-black/10 dark:border-white/10 session-btn-txt">
                 <i class="fas fa-sign-out-alt"></i> Encerrar Sessão (<span id="user-session-lbl"></span>)
             </button>
         </div>
@@ -168,7 +168,7 @@
     <div id="main-app-container" class="min-h-screen flex flex-col hidden">
         
         <!-- Top Navbar -->
-        <header class="glass-card border-b border-gray-200 dark:border-white/10 sticky top-0 z-20 px-4 py-3 bg-[#181117]">
+        <header class="glass-card border-b sticky top-0 z-20 px-4 py-3 nav-bg border-gray-200 dark:border-white/10">
             <div class="max-w-[98%] xl:max-w-[1700px] 2xl:max-w-[1900px] w-full mx-auto flex justify-between items-center">
                 <div class="flex items-center gap-3">
                     <div class="relative">
@@ -178,20 +178,20 @@
                             <i class="fas fa-chevron-down text-xs opacity-80"></i>
                         </button>
                         
-                        <div id="dropdown-sistemas" class="absolute left-0 mt-2 w-72 glass-modal rounded-2xl p-2 shadow-2xl hidden z-50 border border-gray-200 dark:border-white/10 bg-[#1e151d]">
-                            <div class="text-[10px] uppercase font-bold tracking-wider opacity-75 px-3 py-2 text-gray-300">Sistemas Disponíveis</div>
+                        <div id="dropdown-sistemas" class="absolute left-0 mt-2 w-72 glass-modal rounded-2xl p-2 shadow-2xl hidden z-50 border border-gray-200 dark:border-white/10 dropdown-box">
+                            <div class="text-[10px] uppercase font-bold tracking-wider opacity-75 px-3 py-2 sub-label">Sistemas Disponíveis</div>
                             <div class="space-y-1">
-                                <button onclick="mudarModulo('diarias')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition text-white">
+                                <button onclick="mudarModulo('diarias')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition menu-item-txt">
                                     <i class="fas fa-file-invoice-dollar text-secondary"></i> Diárias (Lei 4.937/2025)
                                 </button>
-                                <button onclick="mudarModulo('sms')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition text-white">
+                                <button onclick="mudarModulo('sms')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition menu-item-txt">
                                     <i class="fas fa-chart-pie text-secondary"></i> Gestão Financeira - SMS
                                 </button>
-                                <button onclick="mudarModulo('notafiscal')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition text-white">
-                                    <i class="fas fa-receipt text-blue-400"></i> Auditoria de Nota Fiscal
+                                <button onclick="mudarModulo('notafiscal')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition menu-item-txt">
+                                    <i class="fas fa-receipt text-blue-500 dark:text-blue-400"></i> Auditoria de Nota Fiscal
                                 </button>
                                 <div id="dropdown-admin-item">
-                                    <button onclick="mudarModulo('gerenciar')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition text-purple-300">
+                                    <button onclick="mudarModulo('gerenciar')" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 flex items-center gap-2.5 text-xs font-semibold transition text-purple-700 dark:text-purple-300">
                                         <i class="fas fa-cogs"></i> Gerenciar Sistema (Admin)
                                     </button>
                                 </div>
@@ -200,16 +200,16 @@
                     </div>
 
                     <div>
-                        <h1 id="current-system-title" class="text-sm md:text-base font-extrabold tracking-tight text-white">Sistema de Auditoria de Despesas de Diárias</h1>
-                        <p class="text-[10px] opacity-75 font-semibold text-gray-300">Prefeitura Municipal de Lavras - MG</p>
+                        <h1 id="current-system-title" class="text-sm md:text-base font-extrabold tracking-tight sys-title-txt">Sistema de Auditoria de Despesas de Diárias</h1>
+                        <p class="text-[10px] opacity-75 font-semibold sys-sub-txt">Prefeitura Municipal de Lavras - MG</p>
                     </div>
                 </div>
 
                 <div class="flex items-center gap-3">
-                    <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 transition border border-white/10 text-secondary" title="Alternar Tema Claro/Escuro">
+                    <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition border border-black/10 dark:border-white/10 text-secondary" title="Alternar Tema Claro/Escuro">
                         <i id="theme-icon" class="fas fa-sun"></i>
                     </button>
-                    <div class="text-xs font-semibold hidden md:block text-gray-200">
+                    <div class="text-xs font-semibold hidden md:block user-lbl-txt">
                         Usuário: <span id="nav-username" class="text-secondary font-bold"></span>
                     </div>
                     <button onclick="fazerLogout()" class="bg-red-700 hover:bg-red-800 text-white text-xs px-3 py-2 rounded-xl font-bold transition flex items-center gap-1.5 border border-red-500/30">
@@ -227,17 +227,17 @@
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
                     
                     <div class="glass-card p-3 rounded-2xl border border-gray-200 dark:border-white/10 space-y-1.5 lg:sticky lg:top-20">
-                        <div class="text-[10px] uppercase font-bold tracking-wider opacity-75 px-3 py-2 text-gray-300">Módulo Diárias</div>
+                        <div class="text-[10px] uppercase font-bold tracking-wider opacity-75 px-3 py-2 section-sub-title">Módulo Diárias</div>
                         <button onclick="openDiariasTab('contabilidade')" id="btn-tab-contabilidade" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-primary text-white shadow-md flex items-center gap-3">
                             <i class="fas fa-chart-line text-secondary text-sm"></i> <span>Contabilidade & Histórico</span>
                         </button>
-                        <button onclick="openDiariasTab('previa')" id="btn-tab-previa" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-white flex items-center gap-3">
+                        <button onclick="openDiariasTab('previa')" id="btn-tab-previa" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 flex items-center gap-3">
                             <i class="fas fa-calendar-alt text-secondary text-sm"></i> <span>Diária Prévia (Anexo II)</span>
                         </button>
-                        <button onclick="openDiariasTab('complementacao')" id="btn-tab-complementacao" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-white flex items-center gap-3">
+                        <button onclick="openDiariasTab('complementacao')" id="btn-tab-complementacao" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 flex items-center gap-3">
                             <i class="fas fa-plus-circle text-secondary text-sm"></i> <span>Complementações (Anexo III)</span>
                         </button>
-                        <button onclick="openDiariasTab('realizadas')" id="btn-tab-realizadas" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-white flex items-center gap-3">
+                        <button onclick="openDiariasTab('realizadas')" id="btn-tab-realizadas" class="diaria-tab-btn w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 flex items-center gap-3">
                             <i class="fas fa-check-circle text-secondary text-sm"></i> <span>Viagens Realizadas</span>
                         </button>
                     </div>
@@ -246,26 +246,26 @@
                         <div id="diarias-contabilidade" class="diaria-tab-content space-y-6">
                             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                                 <div class="glass-card p-5 rounded-2xl border border-gray-200 dark:border-white/10">
-                                    <p class="text-xs opacity-75 font-bold uppercase text-gray-300">Total de Auditorias</p>
+                                    <p class="text-xs opacity-75 font-bold uppercase card-lbl">Total de Auditorias</p>
                                     <p class="text-3xl font-black mt-1 text-secondary" id="dash-total">0</p>
                                 </div>
                                 <div class="glass-card p-5 rounded-2xl border border-gray-200 dark:border-white/10">
-                                    <p class="text-xs opacity-75 font-bold uppercase text-gray-300">Viagens Prévias</p>
-                                    <p class="text-3xl font-black mt-1 text-green-400" id="dash-previas">0</p>
+                                    <p class="text-xs opacity-75 font-bold uppercase card-lbl">Viagens Prévias</p>
+                                    <p class="text-3xl font-black mt-1 text-green-600 dark:text-green-400" id="dash-previas">0</p>
                                 </div>
                                 <div class="glass-card p-5 rounded-2xl border border-gray-200 dark:border-white/10">
-                                    <p class="text-xs opacity-75 font-bold uppercase text-gray-300">Complementações</p>
-                                    <p class="text-3xl font-black mt-1 text-yellow-400" id="dash-complementacoes">0</p>
+                                    <p class="text-xs opacity-75 font-bold uppercase card-lbl">Complementações</p>
+                                    <p class="text-3xl font-black mt-1 text-yellow-600 dark:text-yellow-400" id="dash-complementacoes">0</p>
                                 </div>
                                 <div class="glass-card p-5 rounded-2xl border border-gray-200 dark:border-white/10">
-                                    <p class="text-xs opacity-75 font-bold uppercase text-gray-300">Já Realizadas</p>
-                                    <p class="text-3xl font-black mt-1 text-blue-400" id="dash-realizadas">0</p>
+                                    <p class="text-xs opacity-75 font-bold uppercase card-lbl">Já Realizadas</p>
+                                    <p class="text-3xl font-black mt-1 text-blue-600 dark:text-blue-400" id="dash-realizadas">0</p>
                                 </div>
                             </div>
 
                             <div class="glass-card p-6 rounded-2xl border border-gray-200 dark:border-white/10">
                                 <div class="flex justify-between items-center mb-4">
-                                    <h3 class="text-base font-bold text-white">Histórico Geral de Diárias</h3>
+                                    <h3 class="text-base font-bold table-title-txt">Histórico Geral de Diárias</h3>
                                     <div id="admin-limpar-container" class="hidden">
                                         <button onclick="limparHistoricoGeral()" class="bg-red-700 hover:bg-red-800 text-white text-xs px-3 py-2 rounded-xl font-bold transition flex items-center gap-1.5 border border-red-500/30">
                                             <i class="fas fa-trash-alt"></i> Limpar Todo o Histórico
@@ -275,7 +275,7 @@
                                 <div class="overflow-x-auto">
                                     <table class="min-w-full divide-y divide-gray-200 dark:divide-white/10 text-xs">
                                         <thead>
-                                            <tr class="bg-black/20 dark:bg-white/10 text-gray-900 dark:text-white text-left font-extrabold border-b border-gray-300 dark:border-white/20">
+                                            <tr class="table-header-row text-left font-extrabold border-b border-gray-300 dark:border-white/20">
                                                 <th class="px-4 py-3">Tipo</th>
                                                 <th class="px-4 py-3">Data</th>
                                                 <th class="px-4 py-3">Destino</th>
@@ -295,53 +295,53 @@
                         <div id="diarias-previa" class="diaria-tab-content hidden">
                             <div class="glass-card p-6 rounded-2xl border border-gray-200 dark:border-white/10">
                                 <h2 class="text-xl font-extrabold text-secondary mb-1">Auditoria de Diária Prévia (Anexo II)</h2>
-                                <p class="text-xs opacity-80 mb-6 font-medium text-gray-300">Cálculo de viagem antecipada conforme legislação municipal.</p>
+                                <p class="text-xs opacity-80 mb-6 font-medium form-sub-txt">Cálculo de viagem antecipada conforme legislação municipal.</p>
 
                                 <form id="form-previa" onsubmit="salvarAuditoria(event, 'Prévia')" class="space-y-4">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cargo / Função</label>
-                                            <select id="prev-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required>
-                                                <option value="servidor" class="bg-[#1e151d] text-white">Servidor / Motorista / Assessor / Conselheiro</option>
-                                                <option value="prefeito" class="bg-[#1e151d] text-white">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Cargo / Função</label>
+                                            <select id="prev-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required>
+                                                <option value="servidor">Servidor / Motorista / Assessor / Conselheiro</option>
+                                                <option value="prefeito">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cidade Destino</label>
-                                            <input type="text" id="prev-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="checkDistance('prev')" placeholder="Digite ou selecione a cidade">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Cidade Destino</label>
+                                            <input type="text" id="prev-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="checkDistance('prev')" placeholder="Digite ou selecione a cidade">
                                         </div>
                                         <div id="prev-dist-container" class="hidden md:col-span-2">
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Distância (km) - Digite manualmente</label>
-                                            <input type="number" id="prev-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" oninput="calcularTempoEValor('prev')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Distância (km) - Digite manualmente</label>
+                                            <input type="number" id="prev-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium" oninput="calcularTempoEValor('prev')">
                                         </div>
                                         <div class="md:col-span-2">
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Quantidade de Diárias</label>
-                                            <select id="prev-fracao" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('prev')">
-                                                <option value="0.5" class="bg-[#1e151d] text-white">1/2 Diária</option>
-                                                <option value="0.75" class="bg-[#1e151d] text-white">75% da Diária</option>
-                                                <option value="1" selected class="bg-[#1e151d] text-white">1 Diária</option>
-                                                <option value="2" class="bg-[#1e151d] text-white">2 Diárias</option>
-                                                <option value="3" class="bg-[#1e151d] text-white">3 Diárias</option>
-                                                <option value="4" class="bg-[#1e151d] text-white">4 Diárias</option>
-                                                <option value="5" class="bg-[#1e151d] text-white">5 Diárias</option>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Quantidade de Diárias</label>
+                                            <select id="prev-fracao" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('prev')">
+                                                <option value="0.5">1/2 Diária</option>
+                                                <option value="0.75">75% da Diária</option>
+                                                <option value="1" selected>1 Diária</option>
+                                                <option value="2">2 Diárias</option>
+                                                <option value="3">3 Diárias</option>
+                                                <option value="4">4 Diárias</option>
+                                                <option value="5">5 Diárias</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Data de Início</label>
-                                            <input type="date" id="prev-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Data de Início</label>
+                                            <input type="date" id="prev-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Data de Término</label>
-                                            <input type="date" id="prev-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Data de Término</label>
+                                            <input type="date" id="prev-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required>
                                         </div>
                                     </div>
                                     
-                                    <div class="bg-black/20 p-4 rounded-xl border border-white/10 flex justify-between items-center">
+                                    <div class="calc-panel-box p-4 rounded-xl border border-gray-200 dark:border-white/10 flex justify-between items-center">
                                         <div>
-                                            <p class="text-xs opacity-75 text-gray-300">Distância estimada: <span id="prev-calc-dist" class="font-bold text-white">-- km</span></p>
+                                            <p class="text-xs opacity-75">Distância estimada: <span id="prev-calc-dist" class="font-bold">-- km</span></p>
                                         </div>
                                         <div class="text-right">
-                                            <p class="text-xs opacity-75 text-gray-300">Valor Estipulado:</p>
+                                            <p class="text-xs opacity-75">Valor Estipulado:</p>
                                             <p class="text-2xl font-black text-secondary">R$ <span id="prev-valor">0,00</span></p>
                                         </div>
                                     </div>
@@ -354,48 +354,48 @@
                         <div id="diarias-complementacao" class="diaria-tab-content hidden">
                             <div class="glass-card p-6 rounded-2xl border border-gray-200 dark:border-white/10">
                                 <h2 class="text-xl font-extrabold text-secondary mb-1">Auditoria de Complementação (Anexo III)</h2>
-                                <p class="text-xs opacity-80 mb-6 font-medium text-gray-300">Cálculo de viagem em que o tempo excedeu o previsto inicialmente.</p>
+                                <p class="text-xs opacity-80 mb-6 font-medium form-sub-txt">Cálculo de viagem em que o tempo excedeu o previsto inicialmente.</p>
 
                                 <form id="form-comp" onsubmit="salvarAuditoria(event, 'Complementação')" class="space-y-4">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cargo / Função</label>
-                                            <select id="comp-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('comp')">
-                                                <option value="servidor" class="bg-[#1e151d] text-white">Servidor / Motorista / Assessor / Conselheiro</option>
-                                                <option value="prefeito" class="bg-[#1e151d] text-white">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Cargo / Função</label>
+                                            <select id="comp-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('comp')">
+                                                <option value="servidor">Servidor / Motorista / Assessor / Conselheiro</option>
+                                                <option value="prefeito">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cidade Destino</label>
-                                            <input type="text" id="comp-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="checkDistance('comp')" placeholder="Digite ou selecione a cidade">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Cidade Destino</label>
+                                            <input type="text" id="comp-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="checkDistance('comp')" placeholder="Digite ou selecione a cidade">
                                         </div>
                                         <div id="comp-dist-container" class="hidden md:col-span-2">
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Distância (km) - Digite manualmente</label>
-                                            <input type="number" id="comp-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" oninput="calcularTempoEValor('comp')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Distância (km) - Digite manualmente</label>
+                                            <input type="number" id="comp-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium" oninput="calcularTempoEValor('comp')">
                                         </div>
                                         <div class="md:col-span-2">
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Valor Já Recebido na Prévia (R$)</label>
-                                            <input type="number" step="0.01" id="comp-recebido" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required oninput="calcularTempoEValor('comp')" placeholder="0,00">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Valor Já Recebido na Prévia (R$)</label>
+                                            <input type="number" step="0.01" id="comp-recebido" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required oninput="calcularTempoEValor('comp')" placeholder="0,00">
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Início (Data e Hora)</label>
-                                            <input type="datetime-local" id="comp-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('comp')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Início (Data e Hora)</label>
+                                            <input type="datetime-local" id="comp-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('comp')">
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Término (Data e Hora)</label>
-                                            <input type="datetime-local" id="comp-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('comp')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Término (Data e Hora)</label>
+                                            <input type="datetime-local" id="comp-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('comp')">
                                         </div>
                                     </div>
 
-                                    <div class="bg-black/25 p-4 rounded-xl border border-white/10 grid grid-cols-2 gap-4 text-xs">
+                                    <div class="calc-panel-box p-4 rounded-xl border border-gray-200 dark:border-white/10 grid grid-cols-2 gap-4 text-xs">
                                         <div>
-                                            <p class="opacity-75 text-gray-300">Tempo Total Gasto:</p>
-                                            <p class="font-bold text-sm mt-0.5 text-white" id="comp-tempo">-- h -- min</p>
-                                            <p class="opacity-75 mt-2 text-gray-300">Valor Total de Direito:</p>
-                                            <p class="font-bold text-sm mt-0.5 text-white">R$ <span id="comp-valor-direito">0,00</span></p>
+                                            <p class="opacity-75">Tempo Total Gasto:</p>
+                                            <p class="font-bold text-sm mt-0.5" id="comp-tempo">-- h -- min</p>
+                                            <p class="opacity-75 mt-2">Valor Total de Direito:</p>
+                                            <p class="font-bold text-sm mt-0.5">R$ <span id="comp-valor-direito">0,00</span></p>
                                         </div>
                                         <div class="text-right">
-                                            <p class="opacity-75 text-gray-300">Valor a Receber (Complemento):</p>
+                                            <p class="opacity-75">Valor a Receber (Complemento):</p>
                                             <p class="text-xl font-black text-secondary mt-1">R$ <span id="comp-valor">0,00</span></p>
                                         </div>
                                     </div>
@@ -408,42 +408,42 @@
                         <div id="diarias-realizadas" class="diaria-tab-content hidden">
                             <div class="glass-card p-6 rounded-2xl border border-gray-200 dark:border-white/10">
                                 <h2 class="text-xl font-extrabold text-secondary mb-1">Despesas de Viagens Já Realizadas</h2>
-                                <p class="text-xs opacity-80 mb-6 font-medium text-gray-300">Viagens ocorridas sem diária prévia (pagamento integral posterior).</p>
+                                <p class="text-xs opacity-80 mb-6 font-medium form-sub-txt">Viagens ocorridas sem diária prévia (pagamento integral posterior).</p>
 
                                 <form id="form-real" onsubmit="salvarAuditoria(event, 'Realizada')" class="space-y-4">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cargo / Função</label>
-                                            <select id="real-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('real')">
-                                                <option value="servidor" class="bg-[#1e151d] text-white">Servidor / Motorista / Assessor / Conselheiro</option>
-                                                <option value="prefeito" class="bg-[#1e151d] text-white">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Cargo / Função</label>
+                                            <select id="real-cargo" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('real')">
+                                                <option value="servidor">Servidor / Motorista / Assessor / Conselheiro</option>
+                                                <option value="prefeito">Prefeito / Vice / Secretário / Procurador / Coordenador</option>
                                             </select>
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Cidade Destino</label>
-                                            <input type="text" id="real-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="checkDistance('real')" placeholder="Digite ou selecione a cidade">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Cidade Destino</label>
+                                            <input type="text" id="real-cidade" list="cidades-list" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="checkDistance('real')" placeholder="Digite ou selecione a cidade">
                                         </div>
                                         <div id="real-dist-container" class="hidden md:col-span-2">
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Distância (km) - Digite manualmente</label>
-                                            <input type="number" id="real-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" oninput="calcularTempoEValor('real')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Distância (km) - Digite manualmente</label>
+                                            <input type="number" id="real-distancia" class="glass-input w-full rounded-xl p-3 text-xs font-medium" oninput="calcularTempoEValor('real')">
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Início (Data e Hora)</label>
-                                            <input type="datetime-local" id="real-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('real')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Início (Data e Hora)</label>
+                                            <input type="datetime-local" id="real-inicio" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('real')">
                                         </div>
                                         <div>
-                                            <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Término (Data e Hora)</label>
-                                            <input type="datetime-local" id="real-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required onchange="calcularTempoEValor('real')">
+                                            <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Término (Data e Hora)</label>
+                                            <input type="datetime-local" id="real-termino" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required onchange="calcularTempoEValor('real')">
                                         </div>
                                     </div>
 
-                                    <div class="bg-black/25 p-4 rounded-xl border border-white/10 flex justify-between items-center text-xs">
+                                    <div class="calc-panel-box p-4 rounded-xl border border-gray-200 dark:border-white/10 flex justify-between items-center text-xs">
                                         <div>
-                                            <p class="opacity-75 text-gray-300">Tempo Total Gasto: <span id="real-tempo" class="font-bold text-white">-- h -- min</span></p>
-                                            <p class="opacity-75 mt-1 text-gray-300">Distância: <span id="real-calc-dist" class="font-bold text-white">-- km</span></p>
+                                            <p class="opacity-75">Tempo Total Gasto: <span id="real-tempo" class="font-bold">-- h -- min</span></p>
+                                            <p class="opacity-75 mt-1">Distância: <span id="real-calc-dist" class="font-bold">-- km</span></p>
                                         </div>
                                         <div class="text-right">
-                                            <p class="opacity-75 text-gray-300">Valor Integral a Receber:</p>
+                                            <p class="opacity-75">Valor Integral a Receber:</p>
                                             <p class="text-2xl font-black text-secondary">R$ <span id="real-valor">0,00</span></p>
                                         </div>
                                     </div>
@@ -463,7 +463,7 @@
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
                         <div>
                             <h2 class="text-xl font-black text-secondary">Sistema de Gestão Financeira e Orçamentária - SMS</h2>
-                            <p class="text-xs opacity-80 mt-1 text-gray-300">Consulta unificada em contas, fontes, emendas, portarias, VISA, resoluções e objetos de repasse (SUSÃO e convênios).</p>
+                            <p class="text-xs opacity-80 mt-1 module-desc-txt">Consulta unificada em contas, fontes, emendas, portarias, VISA, resoluções e objetos de repasse (SUSÃO e convênios).</p>
                         </div>
                         <div id="sms-admin-action-btn" class="hidden">
                             <button onclick="abrirModalAddContaSMS()" class="bg-secondary text-gray-900 font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:opacity-90 transition shadow-lg">
@@ -474,13 +474,13 @@
 
                     <div class="mb-6 relative">
                         <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-secondary"><i class="fas fa-search"></i></span>
-                        <input type="text" id="sms-search-input" oninput="filtrarContasSMS()" class="glass-input pl-11 pr-4 py-3.5 rounded-xl w-full text-xs font-semibold text-white bg-white/5 border border-white/10" placeholder="Pesquisar em todas as colunas (CONTA, FONTE, EMENDA, CÓDIGO DE APLICAÇÃO, PORTARIA, VISA, OBJETO, UTILIZAÇÃO...)">
+                        <input type="text" id="sms-search-input" oninput="filtrarContasSMS()" class="glass-input pl-11 pr-4 py-3.5 rounded-xl w-full text-xs font-semibold" placeholder="Pesquisar em todas as colunas (CONTA, FONTE, EMENDA, CÓDIGO DE APLICAÇÃO, PORTARIA, VISA, OBJETO, UTILIZAÇÃO...)">
                     </div>
 
                     <div class="w-full overflow-hidden rounded-xl border border-gray-200 dark:border-white/10">
                         <table class="w-full border-collapse text-[11px] table-fixed">
                             <thead>
-                                <tr class="bg-black/20 dark:bg-white/10 text-gray-900 dark:text-white text-left font-extrabold border-b border-gray-300 dark:border-white/20">
+                                <tr class="table-header-row text-left font-extrabold border-b border-gray-300 dark:border-white/20">
                                     <th class="p-2 w-[7%] text-center font-bold uppercase tracking-wider">CONTA</th>
                                     <th class="p-2 w-[6%] text-center font-bold uppercase tracking-wider">FONTE</th>
                                     <th class="p-2 w-[11%] text-left font-bold uppercase tracking-wider">EMENDA /REPASSE/CUSTEIO</th>
@@ -504,7 +504,7 @@
                     <div class="flex justify-between items-center mb-6">
                         <div>
                             <h2 class="text-xl font-black text-secondary">Sistema de Auditoria de Nota Fiscal</h2>
-                            <p class="text-xs opacity-80 mt-1 text-gray-300">Conferência de Notas Fiscais Eletrônicas (NF-e/NFS-e), retenções e itens auditados.</p>
+                            <p class="text-xs opacity-80 mt-1 module-desc-txt">Conferência de Notas Fiscais Eletrônicas (NF-e/NFS-e), retenções e itens auditados.</p>
                         </div>
                         <button onclick="abrirModalNovaNota()" class="bg-primary text-white font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:opacity-90 transition shadow-lg">
                             <i class="fas fa-plus"></i> Registrar Nota Fiscal
@@ -514,7 +514,7 @@
                     <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-white/10 text-xs">
                             <thead>
-                                <tr class="bg-black/20 dark:bg-white/10 text-gray-900 dark:text-white text-left font-extrabold border-b border-gray-300 dark:border-white/20">
+                                <tr class="table-header-row text-left font-extrabold border-b border-gray-300 dark:border-white/20">
                                     <th class="px-4 py-3">Nº da Nota</th>
                                     <th class="px-4 py-3">Fornecedor / CNPJ</th>
                                     <th class="px-4 py-3">Data Emissão</th>
@@ -534,24 +534,24 @@
             <div id="module-gerenciar" class="system-module space-y-6 hidden">
                 <div class="glass-card p-6 rounded-2xl border border-gray-200 dark:border-white/10">
                     <h2 class="text-xl font-black text-secondary mb-1">Gerenciar Sistema (Painel Administrativo)</h2>
-                    <p class="text-xs opacity-80 mb-6 font-medium text-gray-300">Controle de perfis, permissões e customização dos módulos globais.</p>
+                    <p class="text-xs opacity-80 mb-6 font-medium module-desc-txt">Controle de perfis, permissões e customização dos módulos globais.</p>
 
                     <div class="flex gap-2 border-b border-gray-200 dark:border-white/10 pb-4 mb-6">
                         <button onclick="openAdminTab('perfis')" id="btn-admin-perfis" class="admin-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-primary text-white">Gerenciar Perfis & Senhas</button>
-                        <button onclick="openAdminTab('sms-config')" id="btn-admin-sms" class="admin-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-white">Contas SMS (Gerenciar Fontes)</button>
+                        <button onclick="openAdminTab('sms-config')" id="btn-admin-sms" class="admin-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10">Contas SMS (Gerenciar Fontes)</button>
                     </div>
 
                     <div id="admin-tab-perfis" class="admin-tab-content space-y-6">
-                        <div class="bg-black/20 p-5 rounded-xl border border-white/10">
-                            <h3 class="text-sm font-bold mb-4 text-white">Cadastrar Novo Usuário / Perfil</h3>
+                        <div class="calc-panel-box p-5 rounded-xl border border-gray-200 dark:border-white/10">
+                            <h3 class="text-sm font-bold mb-4 form-lbl">Cadastrar Novo Usuário / Perfil</h3>
                             <form onsubmit="cadastrarUsuarioAdmin(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
-                                    <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Nome de Usuário</label>
-                                    <input type="text" id="adm-novo-user" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required placeholder="login_usuario">
+                                    <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Nome de Usuário</label>
+                                    <input type="text" id="adm-novo-user" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required placeholder="login_usuario">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold opacity-85 mb-1 text-gray-200">Senha de Acesso</label>
-                                    <input type="password" id="adm-novo-pass" class="glass-input w-full rounded-xl p-3 text-xs font-medium text-white bg-white/5 border border-white/10" required placeholder="••••••••">
+                                    <label class="block text-xs font-semibold opacity-85 mb-1 form-lbl">Senha de Acesso</label>
+                                    <input type="password" id="adm-novo-pass" class="glass-input w-full rounded-xl p-3 text-xs font-medium" required placeholder="••••••••">
                                 </div>
                                 <div class="flex items-end">
                                     <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white py-3 rounded-xl font-bold text-xs shadow-lg transition">Cadastrar Perfil</button>
@@ -560,11 +560,11 @@
                         </div>
 
                         <div>
-                            <h3 class="text-sm font-bold mb-3 text-white">Lista de Usuários com Acesso</h3>
+                            <h3 class="text-sm font-bold mb-3 form-lbl">Lista de Usuários com Acesso</h3>
                             <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
                                 <table class="min-w-full divide-y divide-gray-200 dark:divide-white/10 text-xs">
                                     <thead>
-                                        <tr class="bg-black/20 dark:bg-white/10 text-gray-900 dark:text-white text-left font-extrabold border-b border-gray-300 dark:border-white/20">
+                                        <tr class="table-header-row text-left font-extrabold border-b border-gray-300 dark:border-white/20">
                                             <th class="px-4 py-3">Usuário</th>
                                             <th class="px-4 py-3 text-right">Ações</th>
                                         </tr>
@@ -577,10 +577,10 @@
 
                     <div id="admin-tab-sms-config" class="admin-tab-content space-y-6 hidden">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-sm font-bold text-white">Atalhos de Gerenciamento SMS</h3>
+                            <h3 class="text-sm font-bold form-lbl">Atalhos de Gerenciamento SMS</h3>
                             <button onclick="abrirModalAddContaSMS()" class="bg-secondary text-gray-900 font-bold px-3 py-2 rounded-xl text-xs">Adicionar Nova Conta</button>
                         </div>
-                        <p class="text-xs opacity-80 text-gray-300">Todas as adições e edições feitas aqui atualizam instantaneamente a base de dados em tempo real no Firebase Firestore.</p>
+                        <p class="text-xs opacity-80 module-desc-txt">Todas as adições e edições feitas aqui atualizam instantaneamente a base de dados em tempo real no Firebase Firestore.</p>
                     </div>
                 </div>
             </div>
@@ -590,46 +590,46 @@
 
     <!-- MODAL ADICIONAR CONTA SMS -->
     <div id="modal-sms" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
-        <div class="glass-modal rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-secondary/30 bg-[#1e151d]">
+        <div class="glass-modal rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-secondary/30">
             <div class="flex justify-between items-center mb-4">
                 <h3 class="text-lg font-bold text-secondary">Adicionar / Editar Conta SMS</h3>
-                <button onclick="fecharModalSMS()" class="text-xs opacity-80 hover:opacity-100 text-white"><i class="fas fa-times text-base"></i></button>
+                <button onclick="fecharModalSMS()" class="text-xs opacity-80 hover:opacity-100 modal-close-btn"><i class="fas fa-times text-base"></i></button>
             </div>
             <form onsubmit="salvarNovaContaSMS(event)" class="space-y-3 text-xs">
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">CONTA</label>
-                    <input type="text" id="sms-conta" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: 1048015">
+                    <label class="block font-semibold opacity-85 mb-1 form-lbl">CONTA</label>
+                    <input type="text" id="sms-conta" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: 1048015">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">FONTE</label>
-                    <input type="text" id="sms-fonte" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: 600/604">
+                    <label class="block font-semibold opacity-85 mb-1 form-lbl">FONTE</label>
+                    <input type="text" id="sms-fonte" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: 600/604">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">EMENDA /REPASSE/CUSTEIO</label>
-                    <input type="text" id="sms-repasse" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: CUSTEIO">
+                    <label class="block font-semibold opacity-85 mb-1 form-lbl">EMENDA /REPASSE/CUSTEIO</label>
+                    <input type="text" id="sms-repasse" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: CUSTEIO">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">CÓDIGO DE APLICAÇÃO</label>
-                    <input type="text" id="sms-aplicacao" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: 3210">
+                    <label class="block font-semibold opacity-85 mb-1 form-lbl">CÓDIGO DE APLICAÇÃO</label>
+                    <input type="text" id="sms-aplicacao" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: 3210">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">Nº da Portaria, Resolução e/ou Deliberação</label>
-                    <input type="text" id="sms-portaria" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: Resolução SES/MG nº 10002/2025">
+                    <label class="block font-semibold opacity-85 mb-1 form-lbl">Nº da Portaria, Resolução e/ou Deliberação</label>
+                    <input type="text" id="sms-portaria" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: Resolução SES/MG nº 10002/2025">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">VISA</label>
-                    <input type="text" id="sms-visa" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: VISA, LEI 171, POEPS">
+                    <label class="block font-semibold opacity-85 mb-1 form-lbl">VISA</label>
+                    <input type="text" id="sms-visa" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: VISA, LEI 171, POEPS">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">Objeto</label>
-                    <input type="text" id="sms-objeto" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" placeholder="Ex: Conta do 'SUSÃO'">
+                    <label class="block font-semibold opacity-85 mb-1 form-lbl">Objeto</label>
+                    <input type="text" id="sms-objeto" class="glass-input w-full rounded-xl p-2.5 font-medium" placeholder="Ex: Conta do 'SUSÃO'">
                 </div>
                 <div>
-                    <label class="block font-semibold opacity-85 mb-1 text-gray-200">Possibilidades de utilização do recurso</label>
-                    <textarea id="sms-utilizacao" class="glass-input w-full rounded-xl p-2.5 font-medium text-white bg-white/5 border border-white/10" rows="2" placeholder="Ex: Observar a portaria específica do repasse"></textarea>
+                    <label class="block font-semibold opacity-85 mb-1 form-lbl">Possibilidades de utilização do recurso</label>
+                    <textarea id="sms-utilizacao" class="glass-input w-full rounded-xl p-2.5 font-medium" rows="2" placeholder="Ex: Observar a portaria específica do repasse"></textarea>
                 </div>
                 <div class="pt-3 flex justify-end gap-2">
-                    <button type="button" onclick="fecharModalSMS()" class="bg-white/10 px-4 py-2 rounded-xl font-bold text-white">Cancelar</button>
+                    <button type="button" onclick="fecharModalSMS()" class="bg-black/10 dark:bg-white/10 px-4 py-2 rounded-xl font-bold modal-cancel-btn">Cancelar</button>
                     <button type="submit" class="bg-secondary text-gray-900 px-5 py-2 rounded-xl font-bold">Salvar Conta</button>
                 </div>
             </form>
@@ -644,71 +644,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-🎨 2. Atualização do style.css
-Substitua também o seu style.css por este estilo para garantir camadas de prioridade (z-index) e opacidade perfeitas:
-/* Custom Glassmorphism & System Theme Styles */
-
-:root {
-    --bg-main: #120c11;
-    --card-bg: rgba(30, 21, 29, 0.95);
-    --border-color: rgba(255, 255, 255, 0.12);
-}
-
-body.light-mode {
-    --bg-main: #f8fafc;
-    --card-bg: rgba(255, 255, 255, 0.96);
-    --border-color: rgba(0, 0, 0, 0.12);
-    color: #0f172a;
-}
-
-body.light-mode #auth-screen,
-body.light-mode #system-selector-screen {
-    background-color: #f1f5f9 !important;
-}
-
-body {
-    background-color: var(--bg-main);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.glass-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--border-color);
-}
-
-.glass-modal {
-    background: rgba(26, 18, 25, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--border-color);
-}
-
-body.light-mode .glass-modal {
-    background: rgba(255, 255, 255, 0.98);
-}
-
-.glass-input {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-body.light-mode .glass-input {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    color: #0f172a !important;
-}
-
-/* Camadas de exibição das telas */
-#auth-screen {
-    z-index: 100;
-}
-
-#system-selector-screen {
-    z-index: 90;
-}
-
-#custom-modal {
-    z-index: 200;
-}
