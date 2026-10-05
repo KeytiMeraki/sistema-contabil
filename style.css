@@ -1,106 +1,139 @@
-/* style.css - Estilos Customizados do Sistema Contábil Integrado */
+/* Custom Glassmorphism & System Theme Styles */
+
 :root {
-    --color-primary: #6B1C33;
-    --color-primary-hover: #521326;
-    --color-secondary: #C29B28;
-    --bg-dark: #120c11;
-    --text-dark: #f3f4f6;
+    --bg-main: #120c11;
+    --card-bg: rgba(30, 21, 29, 0.95);
+    --modal-bg: rgba(26, 18, 25, 0.98);
+    --border-color: rgba(255, 255, 255, 0.12);
+    --text-primary: #f3f4f6;
+    --text-secondary-lbl: #e5e7eb;
+    --text-muted: #9ca3af;
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --table-header-bg: rgba(0, 0, 0, 0.35);
+    --calc-box-bg: rgba(0, 0, 0, 0.25);
+}
+
+body.light-mode {
+    --bg-main: #f1f5f9;
+    --card-bg: #ffffff;
+    --modal-bg: #ffffff;
+    --border-color: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary-lbl: #1e293b;
+    --text-muted: #475569;
+    --input-bg: #f8fafc;
+    --table-header-bg: #e2e8f0;
+    --calc-box-bg: #e2e8f0;
+    color: #0f172a !important;
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Modo Claro (Light Mode) */
-body.light-mode {
-    background-color: #f8fafc;
-    color: #1e293b;
+/* Glass Card & Modal Ajustados */
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
 }
 
 body.light-mode .glass-card {
-    background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-}
-
-body.light-mode .glass-modal {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: rgba(0, 0, 0, 0.15);
-    color: #0f172a;
-}
-
-body.light-mode .glass-input {
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(0, 0, 0, 0.15);
-    color: #0f172a;
-}
-
-body.light-mode .glass-input:focus {
-    background: rgba(0, 0, 0, 0.07);
-    border-color: var(--color-secondary);
-}
-
-/* Estilos de Vidro (Glassmorphism) */
-.glass-card {
-    background: rgba(26, 16, 24, 0.75);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
 }
 
 .glass-modal {
-    background: rgba(20, 12, 18, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(194, 155, 40, 0.3);
+    background: var(--modal-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
 }
 
 .glass-input {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    outline: none;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary) !important;
 }
 
-.glass-input:focus {
-    border-color: var(--color-secondary);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 0 2px rgba(194, 155, 40, 0.2);
+body.light-mode .glass-input {
+    border-color: #94a3b8;
+    color: #0f172a !important;
 }
 
-/* Transições e Animações */
-.transition-all {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+body.light-mode select.glass-input option {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+/* Ajuste de Contraste e Legibilidade do Modo Claro */
+body.light-mode .system-title-txt,
+body.light-mode .main-head-txt,
+body.light-mode .card-head-txt,
+body.light-mode .sys-title-txt,
+body.light-mode .table-title-txt {
+    color: #0f172a !important;
 }
 
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
+body.light-mode .system-subtitle-txt,
+body.light-mode .main-sub-txt,
+body.light-mode .card-sub-txt,
+body.light-mode .sys-sub-txt,
+body.light-mode .user-lbl-txt,
+body.light-mode .section-sub-title,
+body.light-mode .card-lbl,
+body.light-mode .form-sub-txt,
+body.light-mode .form-lbl,
+body.light-mode .label-txt,
+body.light-mode .module-desc-txt,
+body.light-mode .sub-label,
+body.light-mode .menu-item-txt,
+body.light-mode .session-btn-txt {
+    color: #1e293b !important;
 }
 
-::-webkit-scrollbar-thumb {
-    background: rgba(194, 155, 40, 0.4);
-    border-radius: 9999px;
+body.light-mode .input-icon {
+    color: #475569 !important;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(194, 155, 40, 0.7);
-}
-/* Garantia de alto contraste para cabeçalhos de tabelas */
-thead th {
-    color: #ffffff;
-    font-weight: 800;
-    letter-spacing: 0.025em;
+body.light-mode .nav-bg {
+    background-color: #ffffff !important;
+    border-bottom-color: #cbd5e1 !important;
 }
 
-body.light-mode thead th {
-    color: #0f172a;
+body.light-mode .dropdown-box {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+}
+
+body.light-mode .calc-panel-box {
+    background-color: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+body.light-mode .table-header-row {
+    background-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+body.light-mode tr {
+    color: #1e293b !important;
+}
+
+body.light-mode #auth-screen,
+body.light-mode #system-selector-screen {
+    background-color: #f1f5f9 !important;
+}
+
+/* Camadas de exibição das telas */
+#auth-screen {
+    z-index: 100;
+}
+
+#system-selector-screen {
+    z-index: 90;
+}
+
+#custom-modal {
+    z-index: 200;
 }
