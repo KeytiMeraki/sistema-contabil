@@ -782,3 +782,30 @@ function atualizarTabelasGerais() {
     renderizarTabelaNF();
     atualizarTabelaUsuariosAdmin();
 }
+// Suponha que você tenha uma lista ou array onde guarda as informações da tabela:
+let meusDados = [];
+
+// 1. Crie uma função para SALVAR os dados no navegador
+function salvarNoNavegador() {
+    // O localStorage só salva textos, então transformamos a sua lista em formato JSON (texto)
+    localStorage.setItem('dadosContabeis', JSON.stringify(meusDados));
+}
+
+// 2. Crie uma função para CARREGAR os dados sempre que a página atualizar
+function carregarDoNavegador() {
+    const dadosSalvos = localStorage.getItem('dadosContabeis');
+    
+    // Se existir algo salvo, ele converte de texto de volta para a sua lista (array)
+    if (dadosSalvos !== null) {
+        meusDados = JSON.parse(dadosSalvos);
+        
+        // Aqui você chamaria a sua função que desenha as linhas da tabela no HTML
+        // Exemplo: atualizarTabelaHtml();
+    }
+}
+
+// 3. Logo no início do seu arquivo JavaScript, chame a função de carregar!
+carregarDoNavegador();
+
+// IMPORTANTE: Sempre que você adicionar, editar ou excluir um item no sistema, 
+// você deve chamar a função salvarNoNavegador(); no final da ação.
