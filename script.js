@@ -781,7 +781,6 @@ function atualizarTabelasGerais() {
     renderizarTabelaSMS(smsContas);
     renderizarTabelaNF();
     atualizarTabelaUsuariosAdmin();
-}
 // Suponha que você tenha uma lista ou array onde guarda as informações da tabela:
 let meusDados = [];
 
