@@ -809,3 +809,23 @@ carregarDoNavegador();
 
 // IMPORTANTE: Sempre que você adicionar, editar ou excluir um item no sistema, 
 // você deve chamar a função salvarNoNavegador(); no final da ação.
+// Importações do Firestore (ajuste para a sua versão)
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.x.x/firebase-firestore.js";
+
+const db = getFirestore(app); // assumindo que o app do Firebase já está inicializado
+
+// Função para buscar os dados salvos ao atualizar a página
+async function carregarDadosDoFirebase() {
+    // Substitua "sua_colecao" pelo nome da pasta/coleção que você criou no Firebase
+    const querySnapshot = await getDocs(collection(db, "sua_colecao"));
+    
+    querySnapshot.forEach((doc) => {
+        const informacao = doc.data();
+        
+        // Aqui você pega as informações que vieram do banco e joga na sua tabela HTML
+        // Exemplo: criarLinhaDaTabela(informacao.valor, informacao.data, etc);
+    });
+}
+
+// Chame essa função assim que o arquivo JavaScript carregar
+carregarDadosDoFirebase();
